@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/home.dart';
 
+
 class Login extends StatefulWidget {
   @override
   _LoginDemoState createState() => _LoginDemoState();
@@ -13,7 +14,11 @@ class _LoginDemoState extends State<Login> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        //  BoxDecoration(
+        //   color: Color(0xFFC7E76C),
+        // ),
         title: Text("Login Page"),
+        
         backgroundColor: Color(0xFFC7E76C),
       ),
       body: SingleChildScrollView(
@@ -25,9 +30,6 @@ class _LoginDemoState extends State<Login> {
                 child: Container(
                     width: 200,
                     height: 150,
-                    /*decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(50.0)),*/
                     child: Image.asset('images/user.png')),
               ),
             ),
