@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/home.dart';
 
-
 class Login extends StatefulWidget {
   @override
   _LoginDemoState createState() => _LoginDemoState();
@@ -17,8 +16,8 @@ class _LoginDemoState extends State<Login> {
         //  BoxDecoration(
         //   color: Color(0xFFC7E76C),
         // ),
-        title: Text("Login Page"),
-        
+        title: Text("Login"),
+
         backgroundColor: Color(0xFFC7E76C),
       ),
       body: SingleChildScrollView(
@@ -55,10 +54,8 @@ class _LoginDemoState extends State<Login> {
                     hintText: 'Secure password'),
               ),
             ),
-            FlatButton(
-              onPressed: () {
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
-              },
+            TextButton(
+              onPressed: () {},
               child: Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.black, fontSize: 15),
@@ -70,7 +67,7 @@ class _LoginDemoState extends State<Login> {
               decoration: BoxDecoration(
                   color: Color(0xFFC7E76C),
                   borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
                     context,

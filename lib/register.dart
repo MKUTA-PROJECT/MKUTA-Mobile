@@ -8,12 +8,11 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   @override
-  Widget build(BuildContext context)
-
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(' Client Registration'),
+        backgroundColor: Color(0xFFC7E76C),
         // centerTitle: true,
         // elevation: 0.0,
       ),
@@ -24,7 +23,5 @@ class _RegisterState extends State<Register> {
         ),
       ),
     );
-
-
   }
 }

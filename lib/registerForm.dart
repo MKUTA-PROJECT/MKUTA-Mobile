@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mkuat/questions.dart';
+import 'package:mkuat/qns/questions.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({Key key}) : super(key: key);
@@ -24,7 +24,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 ),
                 // validator: (String value) {
                 //   if (value.trim().isEmpty) {
-                //     return 'Nickname is required';
+                //     return 'name is required';
                 //   }
                 // },
               ),
@@ -99,20 +99,19 @@ class _RegisterFormState extends State<RegisterForm> {
                 // }
                 // },
               ),
-              FlatButton(
-                child: Text(
-                  'Save and Continue',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Screen(),
+              TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Screen()),
+                    );
+                  },
+                  child: Center(
+                    child: Text(
+                      'Save and Continue',
+                      style: TextStyle(color: Color(0xFFC7E76C), fontSize: 25),
                     ),
-                  );
-                },
-              ),
+                  )),
               SizedBox(
                 height: 130,
               ),
