@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mkuat/registerForm.dart';
+import 'package:mkuat/registration/registerForm.dart';
+
 
 class Register extends StatefulWidget {
   @override

@@ -8,6 +8,8 @@ class Screen extends StatefulWidget {
 
 class _ScreenState extends State<Screen> {
   int radioValue = -1;
+  int radioValue1 = -1;
+  int radioValue2 = -1;
 
   void handleRadioValueChange(int value) {
     setState(() {
@@ -19,7 +21,34 @@ class _ScreenState extends State<Screen> {
           break;
         case 2:
           break;
-        
+      }
+    });
+  }
+
+  void handleRadioValueChange1(int value) {
+    setState(() {
+      radioValue1 = value;
+      switch (radioValue1) {
+        case 0:
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
+      }
+    });
+  }
+
+  void handleRadioValueChange2(int value) {
+    setState(() {
+      radioValue2 = value;
+      switch (radioValue2) {
+        case 0:
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
       }
     });
   }
@@ -36,7 +65,9 @@ class _ScreenState extends State<Screen> {
           child: Column(children: <Widget>[
             Text('Tick appropriate response'),
             Divider(),
+           // leading: Icon(Icons.people),
             Text('1. Previous TB history?'),
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -59,13 +90,13 @@ class _ScreenState extends State<Screen> {
               children: <Widget>[
                 Radio(
                     value: 0,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    groupValue: radioValue1,
+                    onChanged: handleRadioValueChange1),
                 Text('yes'),
                 Radio(
                     value: 1,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    groupValue: radioValue1,
+                    onChanged: handleRadioValueChange1),
                 Text('No'),
               ],
             ),
@@ -76,18 +107,17 @@ class _ScreenState extends State<Screen> {
               children: <Widget>[
                 Radio(
                     value: 0,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    groupValue: radioValue2,
+                    onChanged: handleRadioValueChange2),
                 Text('yes'),
                 Radio(
                     value: 1,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    groupValue: radioValue2,
+                    onChanged: handleRadioValueChange2),
                 Text('No'),
               ],
             ),
             Divider(),
-            
             TextButton(
               onPressed: () {
                 Navigator.push(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/login.dart';
-import 'package:mkuat/screening.dart';
+
+import 'menu drawer/screening.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,8 +20,8 @@ class _HomeState extends State<Home> {
               DrawerHeader(
                   child: Icon(
                     Icons.person,
-                    size: 50.0,
-                    color: Color(0xFFC7E76C)
+                    size: 100.0,
+                   // color: Color(0xFFC7E76C)
                   ),
                   decoration: BoxDecoration(
                     color: Color(0xFFC7E76C),
@@ -55,15 +56,16 @@ class _HomeState extends State<Home> {
                   // Navigator.pop(context);
                 },
               ),
-              // ListTile(
-              //   title: Text('Defaultant'),
-              //   onTap: () {
-              //     // Update the state of the app
-              //     // ...
-              //     // Then close the drawer
-              //     Navigator.pop(context);
-              //   },
-              // ),
+              ListTile(
+                leading: Icon(Icons.people),
+                title: Text('Defaultant'),
+                onTap: () {
+                  // Update the state of the app
+                  // ...
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
               ListTile(
                 leading: Icon(Icons.logout),
                 title: Text('Logout'),

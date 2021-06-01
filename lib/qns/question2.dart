@@ -8,6 +8,7 @@ class Question2 extends StatefulWidget {
 
 class _Question2State extends State<Question2> {
   int radioValue = -1;
+  int radioValue1 = -1;
 
   void handleRadioValueChange(int value) {
     setState(() {
@@ -17,13 +18,17 @@ class _Question2State extends State<Question2> {
           break;
         case 1:
           break;
-        case 2:
+      }
+    });
+  }
+
+  void handleRadioValueChange1(int value) {
+    setState(() {
+      radioValue1 = value;
+      switch (radioValue1) {
+        case 0:
           break;
-        case 3:
-          break;
-        case 4:
-          break;
-        case 5:
+        case 1:
           break;
       }
     });
@@ -64,13 +69,13 @@ class _Question2State extends State<Question2> {
               children: <Widget>[
                 Radio(
                     value: 0,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    groupValue: radioValue1,
+                    onChanged: handleRadioValueChange1),
                 Text('yes'),
                 Radio(
                     value: 1,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    groupValue: radioValue1,
+                    onChanged: handleRadioValueChange1),
                 Text('No'),
               ],
             ),

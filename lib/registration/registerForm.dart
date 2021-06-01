@@ -10,6 +10,21 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  int radioValue = -1;
+
+  var child;
+
+  void handleRadioValueChange(int value) {
+    setState(() {
+      radioValue = value;
+      switch (radioValue) {
+        case 0:
+          break;
+        case 1:
+          break;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +35,7 @@ class _RegisterFormState extends State<RegisterForm> {
             children: <Widget>[
               TextFormField(
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'FirstName',
                 ),
                 // validator: (String value) {
@@ -29,8 +45,10 @@ class _RegisterFormState extends State<RegisterForm> {
                 // },
               ),
               const SizedBox(height: 16.0),
+              Divider(),
               TextFormField(
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'MiddleName',
                 ),
                 // validator: (String value) {
@@ -39,8 +57,10 @@ class _RegisterFormState extends State<RegisterForm> {
                 // }
                 // },
               ),
+              Divider(),
               TextFormField(
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'LastName',
                 ),
                 // validator: (String value) {
@@ -49,8 +69,10 @@ class _RegisterFormState extends State<RegisterForm> {
                 // }
                 // },
               ),
+              Divider(),
               TextFormField(
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Street',
                 ),
                 // validator: (String value) {
@@ -59,8 +81,10 @@ class _RegisterFormState extends State<RegisterForm> {
                 // }
                 // },
               ),
+              Divider(),
               TextFormField(
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Ward',
                 ),
                 // validator: (String value) {
@@ -69,8 +93,10 @@ class _RegisterFormState extends State<RegisterForm> {
                 // }
                 // },
               ),
+              Divider(),
               TextFormField(
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Region',
                 ),
                 // validator: (String value) {
@@ -79,18 +105,39 @@ class _RegisterFormState extends State<RegisterForm> {
                 // }
                 // },
               ),
+              Divider(),
+              // TextFormField(
+              //   decoration: const InputDecoration(
+              //     border: OutlineInputBorder(),
+              //     labelText: 'Gender', //radioButton goes here
+              // child Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: <Widget>[
+              Text('Gender'),
+
+              //  child: Row( Radio(
+              //     value: 0,
+              //     groupValue: radioValue,
+              //     onChanged: handleRadioValueChange),
+              // Text('Male'),
+              // Radio(
+              //     value: 1,
+              //     groupValue: radioValue,
+              //     onChanged: handleRadioValueChange),
+              // Text('Female'),),
+              //],
+              //),
+              // ),
+              // validator: (String value) {
+              // if (value.trim().isEmpty) {
+              // return 'Full name is required';
+              // }
+              // },
+              // ),
+              Divider(),
               TextFormField(
                 decoration: const InputDecoration(
-                  labelText: 'Sex', //dropdown goes here
-                ),
-                // validator: (String value) {
-                // if (value.trim().isEmpty) {
-                // return 'Full name is required';
-                // }
-                // },
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Age', // dropdown age range goes here
                 ),
                 // validator: (String value) {
@@ -99,6 +146,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 // }
                 // },
               ),
+              Divider(),
               TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -108,7 +156,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   },
                   child: Center(
                     child: Text(
-                      'Save and Continue',
+                      'Continue',
                       style: TextStyle(color: Color(0xFFC7E76C), fontSize: 25),
                     ),
                   )),

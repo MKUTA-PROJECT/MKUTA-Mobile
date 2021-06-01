@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mkuat/register.dart';
-import 'package:mkuat/result.dart';
+import 'package:mkuat/registration/register.dart';
+
+import '../result.dart';
 import 'community.dart';
 
 class Screening extends StatefulWidget {

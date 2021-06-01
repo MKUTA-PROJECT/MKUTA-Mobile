@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:pie_chart/pie_chart.dart';
 
 class Result extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _ResultState extends State<Result> {
         title: Text("SCREENING RESULT"),
         backgroundColor: Color(0xFFC7E76C),
       ),
-      // body: ,
+      body: Image.asset('images/chart.png'),
     );
   }
 }

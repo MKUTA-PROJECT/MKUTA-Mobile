@@ -29,7 +29,7 @@ class _LoginDemoState extends State<Login> {
                 child: Container(
                     width: 200,
                     height: 150,
-                    child: Image.asset('images/user.png')),
+                    child: Image.asset('images/logo.jpg')),
               ),
             ),
             Padding(

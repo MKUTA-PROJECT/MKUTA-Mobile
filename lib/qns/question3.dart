@@ -7,7 +7,11 @@ class Question3 extends StatefulWidget {
 }
 
 class _Question3State extends State<Question3> {
-  int radioValue = -1;
+ int radioValue = -1;
+  int radioValue1 = -1;
+  int radioValue2 = -1;
+   int radioValue3 = -1;
+  int radioValue4 = -1;
 
   void handleRadioValueChange(int value) {
     setState(() {
@@ -19,11 +23,60 @@ class _Question3State extends State<Question3> {
           break;
         case 2:
           break;
-        case 3:
+      }
+    });
+  }
+
+  void handleRadioValueChange1(int value) {
+    setState(() {
+      radioValue1 = value;
+      switch (radioValue1) {
+        case 0:
           break;
-        case 4:
+        case 1:
           break;
-        case 5:
+        case 2:
+          break;
+      }
+    });
+  }
+
+  void handleRadioValueChange2(int value) {
+    setState(() {
+      radioValue2 = value;
+      switch (radioValue2) {
+        case 0:
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
+      }
+    });
+  }
+   void handleRadioValueChange3(int value) {
+    setState(() {
+      radioValue3 = value;
+      switch (radioValue3) {
+        case 0:
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
+      }
+    });
+  }
+
+  void handleRadioValueChange4(int value) {
+    setState(() {
+      radioValue4 = value;
+      switch (radioValue4) {
+        case 0:
+          break;
+        case 1:
+          break;
+        case 2:
           break;
       }
     });
@@ -63,14 +116,14 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 2,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 0,
+                    groupValue: radioValue1,
+                    onChanged: handleRadioValueChange1),
                 Text('yes'),
                 Radio(
-                    value: 3,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 1,
+                    groupValue: radioValue1,
+                    onChanged: handleRadioValueChange1),
                 Text('No'),
               ],
             ),
@@ -80,14 +133,14 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 4,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 0,
+                    groupValue: radioValue2,
+                    onChanged: handleRadioValueChange2),
                 Text('yes'),
                 Radio(
-                    value: 5,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 1,
+                    groupValue: radioValue2,
+                    onChanged: handleRadioValueChange2),
                 Text('No'),
               ],
             ),
@@ -97,14 +150,14 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 6,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 0,
+                    groupValue: radioValue3,
+                    onChanged: handleRadioValueChange3),
                 Text('yes'),
                 Radio(
-                    value: 7,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 1,
+                    groupValue: radioValue3,
+                    onChanged: handleRadioValueChange3),
                 Text('No'),
               ],
             ),
@@ -114,14 +167,14 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 8,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 0,
+                    groupValue: radioValue4,
+                    onChanged: handleRadioValueChange4),
                 Text('yes'),
                 Radio(
-                    value: 9,
-                    groupValue: radioValue,
-                    onChanged: handleRadioValueChange),
+                    value: 1,
+                    groupValue: radioValue4,
+                    onChanged: handleRadioValueChange4),
                 Text('No'),
               ],
             ),
