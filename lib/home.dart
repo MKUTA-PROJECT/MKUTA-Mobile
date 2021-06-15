@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mkuat/login.dart';
+import 'package:mkuat/referal.dart';
+import 'menu drawer/education.dart';
 import 'menu drawer/screening.dart';
 
 class Home extends StatefulWidget {
@@ -38,7 +39,7 @@ class _HomeState extends State<Home> {
                       child: Column(
                     children: <Widget>[
                       Icon(Icons.local_hospital, size: 70.0),
-                      Text("Screening")
+                      Text("Active Case Finding")
                     ],
                   ))),
             ),
@@ -51,7 +52,7 @@ class _HomeState extends State<Home> {
                       child: Column(
                     children: <Widget>[
                       Icon(Icons.local_hospital, size: 70.0),
-                      Text("Sputum/Referal collection")
+                      Text("Referal/Sputum collection")
                     ],
                   ))),
             ),
@@ -64,7 +65,20 @@ class _HomeState extends State<Home> {
                       child: Column(
                     children: <Widget>[
                       Icon(Icons.local_hospital, size: 70.0),
-                      Text("Screening")
+                      Text("TB Test Result")
+                    ],
+                  ))),
+            ),
+            Card(
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                  onTap: () {},
+                  splashColor: Colors.green,
+                  child: Center(
+                      child: Column(
+                    children: <Widget>[
+                      Icon(Icons.local_hospital, size: 70.0),
+                      Text("Contact Tracing")
                     ],
                   ))),
             )
@@ -87,7 +101,17 @@ class _HomeState extends State<Home> {
                 )),
             ListTile(
               leading: Icon(Icons.local_hospital_rounded),
-              title: Text('Screening'),
+              title: Text('TB info & Education'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Education()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.collections),
+              title: Text('Active Case Finding'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -96,28 +120,18 @@ class _HomeState extends State<Home> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.collections),
-              title: Text('Sputum Collection'),
+              leading: Icon(Icons.people),
+              title: Text('Referal/Spurum Collection'),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                // Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Referal()),
+                );
               },
             ),
             ListTile(
               leading: Icon(Icons.people),
-              title: Text('Contact Searching'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                // Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.people),
-              title: Text('Defaultant'),
+              title: Text('TB Test Result'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -126,20 +140,20 @@ class _HomeState extends State<Home> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
+              //leading: Icon(Icons.),
+              title: Text('Contact Tracing'),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => Login()),
+                // );
               },
             ),
           ],
         ),
       ),
       appBar: AppBar(
-        //title: Text("Home"),
+        title: Text("Home"),
         backgroundColor: Color(0xFFC7E76C),
       ),
     );

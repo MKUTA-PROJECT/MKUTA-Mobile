@@ -12,7 +12,7 @@ class _LoginDemoState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: Container(
         child: Column(
           children: <Widget>[
             Padding(

@@ -14,30 +14,62 @@ class _ModelState extends State<Model> {
   RandomForestClassifier svc;
 
   _ModelState() {
-    loadModel("assets/model.json").then((x) {
-      this.svc = RandomForestClassifier.fromMap(json.decode(x));
+    loadModel("assets/random_forest.json").then((x1) {
+       List<double> X = [0.0, 0.0, 0, 0.0];
+   RandomForestClassifier r = RandomForestClassifier.fromMap(json.decode(x1));
+  print(r.predict(X));
   
+  
+    // print(json.decode(x));
+    //   this.svc = RandomForestClassifier.fromMap(json.decode(x));
+    //   List<double> X = [
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1
+    //   ];
+    //   print("Random Forest");
+    //  print(this.svc.predict(X));
     });
   }
 //  @override
 //   void initState() {
 //     super.initState();
 //     List<double> a = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-  
+
 //         // add any widget with svc.predict() callback
 //     print(svc.predict(a));
 //   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: <Widget>[
-                     Text('RandomForest algorithm demonstration'),
-          RaisedButton(
-                         child: Text('Start machine learning'),
-            onPressed: (){
+          Text('RandomForest algorithm demonstration'),
+          ElevatedButton(
+            child: Text('Start machine learning'),
+            onPressed: () {
               learnDemo();
             },
           ),
@@ -46,9 +78,5 @@ class _ModelState extends State<Model> {
     );
   }
 
-  learnDemo() async{
-    List<double> X = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-    print("Random Forest");
-    print(svc.predict(X));
-  }
+  learnDemo() async {}
 }
