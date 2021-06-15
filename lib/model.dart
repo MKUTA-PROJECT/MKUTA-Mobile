@@ -14,8 +14,8 @@ class _ModelState extends State<Model> {
   RandomForestClassifier svc;
 
   _ModelState() {
-    loadModel("assets/random_forest.json").then((x1) {
-       List<double> X = [0.0, 0.0, 0, 0.0];
+    loadModel("assets/model_tb.json").then((x1) {
+       List<double> X = [0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
    RandomForestClassifier r = RandomForestClassifier.fromMap(json.decode(x1));
   print(r.predict(X));
   
