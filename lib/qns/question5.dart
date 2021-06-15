@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../result.dart';
+import 'package:mkuat/model.dart';
 
 class Question5 extends StatefulWidget {
   @override
@@ -184,7 +184,7 @@ class _Question5State extends State<Question5> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Result()),
+                  MaterialPageRoute(builder: (context) => Model()),
                 );
               },
               child: Text(
