@@ -12,14 +12,6 @@ class _LoginDemoState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        //  BoxDecoration(
-        //   color: Color(0xFFC7E76C),
-        // ),
-        title: Text("Login"),
-
-        backgroundColor: Color(0xFFC7E76C),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
