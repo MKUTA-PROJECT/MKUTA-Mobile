@@ -16,13 +16,39 @@ class _ModelState extends State<Model> {
   _ModelState() {
     loadModel("assets/model.json").then((x) {
       this.svc = RandomForestClassifier.fromMap(json.decode(x));
+  
     });
   }
+//  @override
+//   void initState() {
+//     super.initState();
+//     List<double> a = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+  
+//         // add any widget with svc.predict() callback
+//     print(svc.predict(a));
+//   }
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // add any widget with svc.predict() callback
-        );
+      body: Column(
+        children: <Widget>[
+                     Text('RandomForest algorithm demonstration'),
+          RaisedButton(
+                         child: Text('Start machine learning'),
+            onPressed: (){
+              learnDemo();
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  learnDemo() async{
+    List<double> X = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+    print("Random Forest");
+    print(svc.predict(X));
   }
 }
