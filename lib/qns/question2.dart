@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:mkuat/qns/question3.dart';
+import 'package:provider/provider.dart';
 
 class Question2 extends StatefulWidget {
   @override
@@ -15,8 +17,16 @@ class _Question2State extends State<Question2> {
       radioValue = value;
       switch (radioValue) {
         case 0:
+         Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                6:"0"
+              });
           break;
         case 1:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                6:"1"
+              });
           break;
       }
     });
@@ -27,8 +37,16 @@ class _Question2State extends State<Question2> {
       radioValue1 = value;
       switch (radioValue1) {
         case 0:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                7:"0"
+              });
           break;
         case 1:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                7:"1"
+              });
           break;
       }
     });
@@ -46,17 +64,17 @@ class _Question2State extends State<Question2> {
           child: Column(children: <Widget>[
             //Text('Tick appropriate response'),
             Divider(),
-            Text('1. Smoking ?'),
+            Text(' Smoking ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue,
                     onChanged: handleRadioValueChange),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue,
                     onChanged: handleRadioValueChange),
                 Text('No'),
@@ -68,12 +86,12 @@ class _Question2State extends State<Question2> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue1,
                     onChanged: handleRadioValueChange1),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue1,
                     onChanged: handleRadioValueChange1),
                 Text('No'),

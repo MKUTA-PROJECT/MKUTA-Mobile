@@ -1,18 +1,21 @@
 // choose file
 import 'package:flutter/material.dart';
-import 'package:mkuat/home.dart';
+import 'home.dart';
 
 class Login extends StatefulWidget {
   @override
-  _LoginDemoState createState() => _LoginDemoState();
+  _LoginState createState() => _LoginState();
 }
 
-class _LoginDemoState extends State<Login> {
+class _LoginState extends State<Login> {
+  // bool validator = false;
+ // final _formKey = GlobalKey<FormState>();
+  String email, password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Padding(
@@ -25,25 +28,37 @@ class _LoginDemoState extends State<Login> {
               ),
             ),
             Padding(
-              //padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 0, bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
+              child: TextFormField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                    hintText: 'Valid email'),
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                  hintText: 'Valid email',
+                ),
+                // validator: (value) {
+                //   if (value.isEmpty)
+                //     return "Your username or password is incorrect";
+                // else
+                //   return null;
+                //  },
               ),
             ),
             Divider(),
             Padding(
-              //padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
+              child: TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Secure password'),
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                  hintText: 'Secure password',
+                ),
+                // validator: (value) {
+                //   if (value.isEmpty)
+                //     return "incorrect password ";
+                //   else
+                //     return null;
+                // },
               ),
             ),
             TextButton(
@@ -61,10 +76,10 @@ class _LoginDemoState extends State<Login> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
+                  // if (_formKey.currentState.validate()) {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Home()),
-                  );
+                      context, MaterialPageRoute(builder: (context) => Home()));
+                  //  }
                 },
                 child: Text(
                   'Login',

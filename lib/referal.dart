@@ -9,7 +9,9 @@ class _ReferalState extends State<Referal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: Drawer(),
         appBar: AppBar(
+          backgroundColor: Color(0xFFC7E76C),
           title: Text('Referal/Sputum Collection'),
         ),
         body: (ListView(

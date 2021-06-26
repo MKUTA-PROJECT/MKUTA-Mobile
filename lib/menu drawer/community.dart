@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 //import 'package:mkuat/register.dart';
 
 class Community extends StatefulWidget {
@@ -11,6 +12,7 @@ class _CommunityState extends State<Community> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
+       drawer: Drawer(),
         appBar: AppBar(
           title: Text("COMMUNITY SCREENING"),
           backgroundColor: Color(0xFFC7E76C),

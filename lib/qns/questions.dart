@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:mkuat/qns/question2.dart';
+import 'package:provider/provider.dart';
+
 
 class Screen extends StatefulWidget {
   @override
@@ -16,10 +19,12 @@ class _ScreenState extends State<Screen> {
       radioValue = value;
       switch (radioValue) {
         case 0:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({3: "0"});
           break;
         case 1:
-          break;
-        case 2:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({3: "1"});
           break;
       }
     });
@@ -30,8 +35,12 @@ class _ScreenState extends State<Screen> {
       radioValue1 = value;
       switch (radioValue1) {
         case 0:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({4: "0"});
           break;
         case 1:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({4: "1"});
           break;
         case 2:
           break;
@@ -44,11 +53,14 @@ class _ScreenState extends State<Screen> {
       radioValue2 = value;
       switch (radioValue2) {
         case 0:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({5: "0"});
           break;
         case 1:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({5: "1"});
           break;
-        case 2:
-          break;
+      
       }
     });
   }
@@ -56,6 +68,7 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
         appBar: AppBar(
           backgroundColor: Color(0xFFC7E76C),
           title: Text('RISK FACTORS'),
@@ -65,53 +78,53 @@ class _ScreenState extends State<Screen> {
           child: Column(children: <Widget>[
             Text('Tick appropriate response'),
             Divider(),
-           // leading: Icon(Icons.people),
-            Text('1. Previous TB history?'),
-            
+            // leading: Icon(Icons.people),
+            Text(' Previous TB history?'),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue,
                     onChanged: handleRadioValueChange),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue,
                     onChanged: handleRadioValueChange),
                 Text('No'),
               ],
             ),
             Divider(),
-            Text('2. TB contact?'),
+            Text(' TB contact?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue1,
                     onChanged: handleRadioValueChange1),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue1,
                     onChanged: handleRadioValueChange1),
                 Text('No'),
               ],
             ),
             Divider(),
-            Text('3. Family TB history?'),
+            Text(' Family TB history?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue2,
                     onChanged: handleRadioValueChange2),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue2,
                     onChanged: handleRadioValueChange2),
                 Text('No'),

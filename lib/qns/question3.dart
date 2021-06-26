@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:mkuat/qns/question4.dart';
+import 'package:provider/provider.dart';
 
 class Question3 extends StatefulWidget {
   @override
@@ -18,8 +20,16 @@ class _Question3State extends State<Question3> {
       radioValue = value;
       switch (radioValue) {
         case 0:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                8:"0"
+              });
           break;
         case 1:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                8:"1"
+              });
           break;
         case 2:
           break;
@@ -32,8 +42,16 @@ class _Question3State extends State<Question3> {
       radioValue1 = value;
       switch (radioValue1) {
         case 0:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                9:"0"
+              });
           break;
         case 1:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                9:"1"
+              });
           break;
         case 2:
           break;
@@ -46,8 +64,16 @@ class _Question3State extends State<Question3> {
       radioValue2 = value;
       switch (radioValue2) {
         case 0:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                10:"0"
+              });
           break;
         case 1:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                10:"1"
+              });
           break;
         case 2:
           break;
@@ -59,8 +85,16 @@ class _Question3State extends State<Question3> {
       radioValue3 = value;
       switch (radioValue3) {
         case 0:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                11:"0"
+              });
           break;
         case 1:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                11:"1"
+              });
           break;
         case 2:
           break;
@@ -73,8 +107,16 @@ class _Question3State extends State<Question3> {
       radioValue4 = value;
       switch (radioValue4) {
         case 0:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                12:"0"
+              });
           break;
         case 1:
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                12:"1"
+              });
           break;
         case 2:
           break;
@@ -99,12 +141,12 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue,
                     onChanged: handleRadioValueChange),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue,
                     onChanged: handleRadioValueChange),
                 Text('No'),
@@ -116,12 +158,12 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue1,
                     onChanged: handleRadioValueChange1),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue1,
                     onChanged: handleRadioValueChange1),
                 Text('No'),
@@ -133,12 +175,12 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue2,
                     onChanged: handleRadioValueChange2),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue2,
                     onChanged: handleRadioValueChange2),
                 Text('No'),
@@ -150,12 +192,12 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue3,
                     onChanged: handleRadioValueChange3),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue3,
                     onChanged: handleRadioValueChange3),
                 Text('No'),
@@ -167,12 +209,12 @@ class _Question3State extends State<Question3> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Radio(
-                    value: 0,
+                    value: 1,
                     groupValue: radioValue4,
                     onChanged: handleRadioValueChange4),
                 Text('yes'),
                 Radio(
-                    value: 1,
+                    value: 0,
                     groupValue: radioValue4,
                     onChanged: handleRadioValueChange4),
                 Text('No'),

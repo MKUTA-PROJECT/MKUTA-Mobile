@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:mkuat/qns/questions.dart';
+import 'package:provider/provider.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({Key key}) : super(key: key);
@@ -19,8 +21,12 @@ class _RegisterFormState extends State<RegisterForm> {
       radioValue = value;
       switch (radioValue) {
         case 0:
+          //  Provider.of<QuestionaireState>(context, listen: false)
+          //       .onPutAnswer({1:"0"});
           break;
         case 1:
+          //  Provider.of<QuestionaireState>(context, listen: false)
+          //       .onPutAnswer({1:"1"});
           break;
       }
     });
@@ -28,6 +34,7 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController _age = new TextEditingController();
     return Form(
         key: _formKey,
         child: Column(
@@ -51,7 +58,8 @@ class _RegisterFormState extends State<RegisterForm> {
                   border: OutlineInputBorder(),
                   labelText: 'MiddleName',
                 ),
-                // validator: (String value) {
+                // ignore: missing_return
+                // validator: (value) {
                 // if (value.trim().isEmpty) {
                 // return 'Full name is required';
                 // }
@@ -106,40 +114,13 @@ class _RegisterFormState extends State<RegisterForm> {
                 // },
               ),
               Divider(),
-              // TextFormField(
-              //   decoration: const InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     labelText: 'Gender', //radioButton goes here
-              // child Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: <Widget>[
-              Text('Gender'),
-
-              //  child: Row( Radio(
-              //     value: 0,
-              //     groupValue: radioValue,
-              //     onChanged: handleRadioValueChange),
-              // Text('Male'),
-              // Radio(
-              //     value: 1,
-              //     groupValue: radioValue,
-              //     onChanged: handleRadioValueChange),
-              // Text('Female'),),
-              //],
-              //),
-              // ),
-              // validator: (String value) {
-              // if (value.trim().isEmpty) {
-              // return 'Full name is required';
-              // }
-              // },
-              // ),
-              Divider(),
               TextFormField(
+                controller: _age,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Age', // dropdown age range goes here
                 ),
+
                 // validator: (String value) {
                 // if (value.trim().isEmpty) {
                 // return 'Full name is required';
@@ -147,8 +128,29 @@ class _RegisterFormState extends State<RegisterForm> {
                 // },
               ),
               Divider(),
+              Text('Gender'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Radio(
+                      value: 0,
+                      groupValue: radioValue,
+                      onChanged: handleRadioValueChange),
+                  Text('Female'),
+                  Radio(
+                      value: 1,
+                      groupValue: radioValue,
+                      onChanged: handleRadioValueChange),
+                  Text('Male'),
+                ],
+              ),
+              Divider(),
               TextButton(
                   onPressed: () {
+                    Provider.of<QuestionaireState>(context, listen: false)
+                        .onPutAnswer({1: "1"});
+                    Provider.of<QuestionaireState>(context, listen: false)
+                        .onPutAnswer({2: "1"});
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Screen()),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/registration/register.dart';
-
-import '../result.dart';
+import 'package:mkuat/result/result.dart';
 import 'community.dart';
 
 class Screening extends StatefulWidget {
@@ -13,6 +12,7 @@ class _ScreeningState extends State<Screening> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: Drawer(),
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text("SCREENING"),
@@ -22,7 +22,7 @@ class _ScreeningState extends State<Screening> {
             // title: Text('Screening'),
             children: <Widget>[
               ListTile(
-                leading: Icon(Icons.local_hospital),
+                leading: Icon(Icons.local_hospital,  color: Color(0xFFC7E76C)),
                 title: Text('Facility Screening'),
                 onTap: () {
                   Navigator.push(
@@ -33,7 +33,7 @@ class _ScreeningState extends State<Screening> {
               ),
               // Divider(),
               ListTile(
-                leading: Icon(Icons.local_hospital),
+                leading: Icon(Icons.local_hospital,  color: Color(0xFFC7E76C)),
                 title: Text('Community Screening'),
                 onTap: () {
                   //registration of patient goes here
@@ -45,7 +45,7 @@ class _ScreeningState extends State<Screening> {
               ),
               //Divider(),
               ListTile(
-                leading: Icon(Icons.question_answer),
+                leading: Icon(Icons.question_answer,  color: Color(0xFFC7E76C)),
                 title: Text('Result'),
                 onTap: () {
                   Navigator.push(
