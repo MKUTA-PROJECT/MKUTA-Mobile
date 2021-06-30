@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/UI/model/result.dart';
 import 'package:mkuat/app_state/questionaire_state.dart';
-import 'package:mkuat/result/result.dart';
 import 'package:provider/provider.dart';
 
 class Question5 extends StatefulWidget {
@@ -129,6 +129,7 @@ class Question5State extends State<Question5> {
             title: Text('OTHER SYMPTONS'),
           ),
           body: SingleChildScrollView(
+          
             padding: EdgeInsets.all(10.0),
             child: Column(children: <Widget>[
               //Text('Tick appropriate response'),

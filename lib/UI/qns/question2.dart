@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/UI/qns/question3.dart';
 import 'package:mkuat/app_state/questionaire_state.dart';
-import 'package:mkuat/qns/question2.dart';
 import 'package:provider/provider.dart';
 
-
-class Screen extends StatefulWidget {
+class Question2 extends StatefulWidget {
   @override
-  _ScreenState createState() => _ScreenState();
+  _Question2State createState() => _Question2State();
 }
 
-class _ScreenState extends State<Screen> {
+class _Question2State extends State<Question2> {
   int radioValue = -1;
   int radioValue1 = -1;
-  int radioValue2 = -1;
 
   void handleRadioValueChange(int value) {
     setState(() {
       radioValue = value;
       switch (radioValue) {
         case 0:
-          Provider.of<QuestionaireState>(context, listen: false)
-              .onPutAnswer({3: "0"});
+         Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                6:"0"
+              });
           break;
         case 1:
-          Provider.of<QuestionaireState>(context, listen: false)
-              .onPutAnswer({3: "1"});
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                6:"1"
+              });
           break;
       }
     });
@@ -35,32 +37,17 @@ class _ScreenState extends State<Screen> {
       radioValue1 = value;
       switch (radioValue1) {
         case 0:
-          Provider.of<QuestionaireState>(context, listen: false)
-              .onPutAnswer({4: "0"});
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                7:"0"
+              });
           break;
         case 1:
-          Provider.of<QuestionaireState>(context, listen: false)
-              .onPutAnswer({4: "1"});
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                7:"1"
+              });
           break;
-        case 2:
-          break;
-      }
-    });
-  }
-
-  void handleRadioValueChange2(int value) {
-    setState(() {
-      radioValue2 = value;
-      switch (radioValue2) {
-        case 0:
-          Provider.of<QuestionaireState>(context, listen: false)
-              .onPutAnswer({5: "0"});
-          break;
-        case 1:
-          Provider.of<QuestionaireState>(context, listen: false)
-              .onPutAnswer({5: "1"});
-          break;
-      
       }
     });
   }
@@ -68,19 +55,16 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
         appBar: AppBar(
           backgroundColor: Color(0xFFC7E76C),
-          title: Text('RISK FACTORS'),
+          title: Text('HABITS'),
         ),
         body: Container(
           padding: EdgeInsets.all(10.0),
           child: Column(children: <Widget>[
-            Text('Tick appropriate response'),
+            //Text('Tick appropriate response'),
             Divider(),
-            // leading: Icon(Icons.people),
-            Text(' Previous TB history?'),
-
+            Text(' Smoking ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -97,7 +81,7 @@ class _ScreenState extends State<Screen> {
               ],
             ),
             Divider(),
-            Text(' TB contact?'),
+            Text('2. Substance Abuse?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -110,23 +94,6 @@ class _ScreenState extends State<Screen> {
                     value: 0,
                     groupValue: radioValue1,
                     onChanged: handleRadioValueChange1),
-                Text('No'),
-              ],
-            ),
-            Divider(),
-            Text(' Family TB history?'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Radio(
-                    value: 1,
-                    groupValue: radioValue2,
-                    onChanged: handleRadioValueChange2),
-                Text('yes'),
-                Radio(
-                    value: 0,
-                    groupValue: radioValue2,
-                    onChanged: handleRadioValueChange2),
                 Text('No'),
               ],
             ),
@@ -135,7 +102,7 @@ class _ScreenState extends State<Screen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Question2()),
+                  MaterialPageRoute(builder: (context) => Question3()),
                 );
               },
               child: Text(

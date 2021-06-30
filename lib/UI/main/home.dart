@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mkuat/menu%20drawer/education.dart';
-import 'package:mkuat/menu%20drawer/screening.dart';
-import 'package:mkuat/referal.dart';
-import 'package:mkuat/result/patientResult.dart';
+import 'package:mkuat/UI/Dahboard/education.dart';
+import 'package:mkuat/UI/Dahboard/screening.dart';
+import 'package:mkuat/UI/model/patientResult.dart';
+import 'package:mkuat/UI/model/referal/sputum_referal.dart';
 import 'login.dart';
 
 class Home extends StatefulWidget {
@@ -14,6 +14,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Container(
         padding: EdgeInsets.all(30.0),
         child: GridView.count(

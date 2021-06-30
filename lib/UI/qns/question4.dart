@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/UI/qns/question5.dart';
 import 'package:mkuat/app_state/questionaire_state.dart';
-import 'package:mkuat/qns/question4.dart';
 import 'package:provider/provider.dart';
 
-class Question3 extends StatefulWidget {
+class Question4 extends StatefulWidget {
   @override
-  _Question3State createState() => _Question3State();
+  _Question4State createState() => _Question4State();
 }
 
-class _Question3State extends State<Question3> {
- int radioValue = -1;
+class _Question4State extends State<Question4> {
+  int radioValue = -1;
   int radioValue1 = -1;
   int radioValue2 = -1;
-   int radioValue3 = -1;
+  int radioValue3 = -1;
   int radioValue4 = -1;
 
   void handleRadioValueChange(int value) {
@@ -22,13 +22,13 @@ class _Question3State extends State<Question3> {
         case 0:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                8:"0"
+                13:"0"
               });
           break;
         case 1:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                8:"1"
+                13:"1"
               });
           break;
         case 2:
@@ -44,13 +44,13 @@ class _Question3State extends State<Question3> {
         case 0:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                9:"0"
+                14:"0"
               });
           break;
         case 1:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                9:"1"
+                14:"1"
               });
           break;
         case 2:
@@ -66,13 +66,13 @@ class _Question3State extends State<Question3> {
         case 0:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                10:"0"
+                15:"0"
               });
           break;
         case 1:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                10:"1"
+                15:"1"
               });
           break;
         case 2:
@@ -80,20 +80,21 @@ class _Question3State extends State<Question3> {
       }
     });
   }
-   void handleRadioValueChange3(int value) {
+
+  void handleRadioValueChange3(int value) {
     setState(() {
       radioValue3 = value;
       switch (radioValue3) {
         case 0:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                11:"0"
+                16:"0"
               });
           break;
         case 1:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                11:"1"
+                16:"1"
               });
           break;
         case 2:
@@ -109,13 +110,13 @@ class _Question3State extends State<Question3> {
         case 0:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                12:"0"
+                17:"0"
               });
           break;
         case 1:
         Provider.of<QuestionaireState>(context, listen: false)
               .onPutAnswer({
-                12:"1"
+                17:"1"
               });
           break;
         case 2:
@@ -129,14 +130,14 @@ class _Question3State extends State<Question3> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFC7E76C),
-          title: Text('DISEASES'),
+          title: Text('MOST SCREENING TB SYMPTONS'),
         ),
         body: Container(
           padding: EdgeInsets.all(10.0),
           child: Column(children: <Widget>[
             //Text('Tick appropriate response'),
             Divider(),
-            Text('HIV victim ?'),
+            Text('Cough more than 2 weeks ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -153,7 +154,7 @@ class _Question3State extends State<Question3> {
               ],
             ),
             Divider(),
-            Text('Diabetes ?'),
+            Text('Fever for more than 7 days ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -170,7 +171,7 @@ class _Question3State extends State<Question3> {
               ],
             ),
             Divider(),
-            Text('Anaemia ?'),
+            Text('hymoptyysis ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -187,7 +188,7 @@ class _Question3State extends State<Question3> {
               ],
             ),
             Divider(),
-            Text('Malnutrition ?'),
+            Text('Night sweats ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -204,7 +205,7 @@ class _Question3State extends State<Question3> {
               ],
             ),
             Divider(),
-            Text('Other Infections ?'),
+            Text('Weight loss ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -225,7 +226,7 @@ class _Question3State extends State<Question3> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Question4()),
+                  MaterialPageRoute(builder: (context) => Question5()),
                 );
               },
               child: Text(

@@ -1,9 +1,11 @@
 import 'dart:core';
 
 import 'package:flutter/cupertino.dart';
+import 'package:mkuat/app_state/patient_state.dart';
+import 'package:mkuat/core/service/patient_service.dart';
 import 'package:mkuat/core/service/questionaire_service.dart';
 
-class QuestionaireState extends ChangeNotifier {
+class QuestionaireState extends PatientState {
 //init state
   List<Map<int, String>> _answerslist = [];
   bool _isSubmit;
@@ -49,6 +51,9 @@ class QuestionaireState extends ChangeNotifier {
     double result = await QuestionService().onGetResultFromServer(onAnswers);
     _currentResults = result;
     _onResult = true;
+  //  await PatientService.updatePatientAnalysisValue(
+  //       currentPatient, result.toString());
+    _answerslist.clear();
     notifyListeners();
   }
 }

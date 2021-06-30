@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-//import 'package:mkuat/register.dart';
+import 'drawer.dart';
+
 
 class Community extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _CommunityState extends State<Community> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-       drawer: Drawer(),
+       drawer: MyDrawer(),
         appBar: AppBar(
           title: Text("COMMUNITY SCREENING"),
           backgroundColor: Color(0xFFC7E76C),
