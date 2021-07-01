@@ -13,7 +13,7 @@ class _SputumState extends State<Sputum> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sputum Collection Form'),
+        title: Text('Sputum Collection '),
         backgroundColor: Color(0xFFC7E76C),
       ),
       body: SingleChildScrollView(

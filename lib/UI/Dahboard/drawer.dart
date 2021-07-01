@@ -13,24 +13,31 @@ class MyDrawer extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             child: Container(
-              child: Column(
-                children: [
+             
+              child:
+ 
                   // Icon(
+
                   //   Icons.person,
                   //   size: 10.0,
                   //   // color: Color(0xFFC7E76C)
                   // ),
                   UserAccountsDrawerHeader(
-                      accountName: new Text('admin'),
+
+                      //margin: EdgeInsets.all(zero),
+                      accountName: new Text(
+                        'admin',
+                        style: TextStyle(fontSize: 25.0),
+                      ),
                       accountEmail: new Text(
                         "admin@gmail.com",
+                        style: TextStyle(fontSize: 20.0),
                       )),
-                ],
-              ),
             ),
-
-            //decoration: BoxDecoration()
           ),
+
+          //decoration: BoxDecoration()
+
           ListTile(
             leading: Icon(Icons.info, color: Color(0xFFC7E76C)),
             title: Text('TB info & Education'),

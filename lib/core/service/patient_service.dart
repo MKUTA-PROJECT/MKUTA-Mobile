@@ -15,9 +15,24 @@ class PatientService {
 
   static Future updatePatientAnalysisValue(
       Patient currentPatient, String analysisValue) {
-    currentPatient.tb_suspect = analysisValue;
+    print("data on update");
+    print(currentPatient.tb_suspect);
     print(analysisValue);
-    PatientState().savePatient(currentPatient);
+    Patient patient = new Patient(
+      id: currentPatient.id,
+      first_name:currentPatient.first_name ,
+      middle_name: currentPatient.middle_name,
+      last_name: currentPatient.last_name,
+      gender:currentPatient.gender ,
+      tel: currentPatient.tel,
+      age:currentPatient.age ,
+      region:currentPatient.region ,
+      district: currentPatient.district,
+      ward:currentPatient.ward,
+      street:currentPatient.street,
+      tb_status:"",
+      tb_suspect:analysisValue, actitivity:"");
+    PatientState().savePatient(patient);
     return null;
   }
 }

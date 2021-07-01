@@ -240,10 +240,13 @@ class Question5State extends State<Question5> {
                 onPressed: () async {
                   await questionState.onSubmitAnswers();
                   if (questionState.onResult) {
+                    
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Result()),
                     );
+
+
                   }
                 },
                 child: Text(

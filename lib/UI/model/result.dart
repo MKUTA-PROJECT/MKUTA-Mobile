@@ -6,6 +6,8 @@ import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
 
+import 'referal/sputum.dart';
+
 class Result extends StatefulWidget {
   @override
   _ResultState createState() => _ResultState();
@@ -70,12 +72,12 @@ class _ResultState extends State<Result> {
                     Container(
                         margin: EdgeInsets.symmetric(
                             horizontal: 10.0, vertical: 10.0),
-                        padding: EdgeInsets.symmetric(vertical: 10),
+                        // padding: EdgeInsets.symmetric(vertical: 10),
                         child: Column(
                           children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(vertical: 10),
-                            ),
+                            // Padding(
+                            //   padding: EdgeInsets.symmetric(vertical: 10),
+                            // ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -86,16 +88,29 @@ class _ResultState extends State<Result> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Divider(),
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Referal()),
-                                    );
-                                   },
-                                  child: Text('Refer client hHere'),
-                                )
+                                Container(
+                                    child: Column(children: <Widget>[
+                                  InkWell(
+                                      child: Text("Refer Client Here"),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Referal()),
+                                        );
+                                      }),
+                                      Divider(),
+                                      InkWell(
+                                      child: Text("Collect sputum Here"),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Sputum()),
+                                        );
+                                      }),
+                                ]))
+                                
                               ],
                             )
                           ],

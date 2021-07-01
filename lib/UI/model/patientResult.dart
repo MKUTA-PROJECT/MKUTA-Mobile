@@ -35,6 +35,17 @@ class PatientResults extends StatefulWidget {
 
 class _PatientResultsState extends State<PatientResults> {
   @override
+  void initState() {
+    super.initState();
+
+    _loadWidget();
+  }
+
+  _loadWidget() async {
+   await Provider.of<PatientState>(context, listen: false).getPatient();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<PatientState>(
         builder: (BuildContext context, patientState, child) {
@@ -47,7 +58,24 @@ class _PatientResultsState extends State<PatientResults> {
           body: SingleChildScrollView(
               padding: EdgeInsets.all(15.0),
               child: Container(
-                  child: Table(
+                  child: Column(
+                    children: [
+                       Table(
+                      defaultColumnWidth: FixedColumnWidth(80.0),
+                      border: TableBorder.all(
+                        color: Colors.black,
+                        style: BorderStyle.solid,
+                        // width: 2
+                      ),
+                      children: [
+                  TableRow(children: [
+                    Column(children: [Text('Client Name')]),
+                    Column(children: [Text('Facility')]),
+                    Column(children: [Text('Suspicion')]),
+                    Column(children: [Text('Status')]),
+                  ]),
+                ]),
+                      Table(
                       defaultColumnWidth: FixedColumnWidth(80.0),
                       border: TableBorder.all(
                         color: Colors.black,
@@ -59,9 +87,11 @@ class _PatientResultsState extends State<PatientResults> {
                           Column(children: [Text(patient.first_name)]),
                           Column(children: [Text(patient.region)]),
                           Column(children: [Text(patient.street)]),
-                          Column(children: [Text(patient.actitivity)])
+                          Column(children: [Text(patient.tb_suspect)])
                         ]);
-                      }).toList()))));
+                      }).toList())
+                    ],
+                  ))));
     });
   }
 }

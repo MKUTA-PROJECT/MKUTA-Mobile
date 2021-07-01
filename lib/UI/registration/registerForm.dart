@@ -28,7 +28,6 @@ class _RegisterFormState extends State<RegisterForm> {
   TextEditingController _dController = new TextEditingController();
   TextEditingController _wController = new TextEditingController();
   TextEditingController _sController = new TextEditingController();
-
   TextEditingController _aController = new TextEditingController();
   TextEditingController _tController = new TextEditingController();
   TextEditingController _gController = new TextEditingController();
@@ -210,15 +209,15 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                   child: TextButton(
                       onPressed: () {
-                    
-                            if( _gController.text != null &&  _gController.text =="M"){
-    Provider.of<QuestionaireState>(context, listen: false)
-                            .onPutAnswer({1: "1"});
-                            }
-                            else{
-                                  Provider.of<QuestionaireState>(context, listen: false)
-                            .onPutAnswer({1: "0"});
-                            }
+                        if (_gController.text != null &&
+                            _gController.text == "M") {
+                          Provider.of<QuestionaireState>(context, listen: false)
+                              .onPutAnswer({1: "1"});
+                        } else {
+                          Provider.of<QuestionaireState>(context, listen: false)
+                              .onPutAnswer({1: "0"});
+                        }
+
                         Provider.of<QuestionaireState>(context, listen: false)
                             .onPutAnswer({2: "1"});
                         Patient patient = new Patient(

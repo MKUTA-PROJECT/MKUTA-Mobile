@@ -1,6 +1,4 @@
 import 'dart:core';
-
-import 'package:flutter/cupertino.dart';
 import 'package:mkuat/app_state/patient_state.dart';
 import 'package:mkuat/core/service/patient_service.dart';
 import 'package:mkuat/core/service/questionaire_service.dart';
@@ -34,7 +32,6 @@ class QuestionaireState extends PatientState {
       // Map<int, String> singleAnwser in answerslist
       answerslist.forEach((Map<int, String> answer) {
         if (answer.keys.contains(questionNo)) {
-          print("answers are  " + answer[questionNo]);
 
           if (answer[questionNo] != null) {
             onAnswers.add(answer[questionNo]);
@@ -47,12 +44,15 @@ class QuestionaireState extends PatientState {
         }
       });
     }
-    print(onAnswers);
+
     double result = await QuestionService().onGetResultFromServer(onAnswers);
+    print("on results    ");
+    print(result);
+    await PatientService.updatePatientAnalysisValue(
+          currentPatient, result.toString());
     _currentResults = result;
     _onResult = true;
-  //  await PatientService.updatePatientAnalysisValue(
-  //       currentPatient, result.toString());
+     
     _answerslist.clear();
     notifyListeners();
   }

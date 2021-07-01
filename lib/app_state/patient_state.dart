@@ -1,4 +1,3 @@
-  
 import 'package:flutter/foundation.dart';
 import 'package:mkuat/UI/model/patient.dart';
 import 'package:mkuat/core/service/patient_service.dart';
@@ -12,12 +11,13 @@ class PatientState with ChangeNotifier {
 //selector
   bool get isLoading => _isLoading ?? false;
   List<Patient> get patientList => _patientList ?? [];
-  Patient get currentPatient => _currentPatient ?? [];
+  Patient get currentPatient => _currentPatient;
 
   //reducer
   savePatient(Patient patient) {
     _isLoading = true;
     _currentPatient = patient;
+    notifyListeners();
     PatientService.onSavePatientToOffline(patient);
     _isLoading = false;
     notifyListeners();
