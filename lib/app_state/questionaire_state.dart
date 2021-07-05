@@ -1,9 +1,11 @@
 import 'dart:core';
+import 'package:flutter/cupertino.dart';
+import 'package:mkuat/UI/model/patient.dart';
 import 'package:mkuat/app_state/patient_state.dart';
 import 'package:mkuat/core/service/patient_service.dart';
 import 'package:mkuat/core/service/questionaire_service.dart';
 
-class QuestionaireState extends PatientState {
+class QuestionaireState extends ChangeNotifier {
 //init state
   List<Map<int, String>> _answerslist = [];
   bool _isSubmit;
@@ -24,7 +26,7 @@ class QuestionaireState extends PatientState {
     notifyListeners();
   }
 
-  Future<void> onSubmitAnswers() async {
+  Future<void> onSubmitAnswers(Patient patient) async {
     _isSubmit = true;
     notifyListeners();
     List<String> onAnswers = [];
@@ -32,7 +34,6 @@ class QuestionaireState extends PatientState {
       // Map<int, String> singleAnwser in answerslist
       answerslist.forEach((Map<int, String> answer) {
         if (answer.keys.contains(questionNo)) {
-
           if (answer[questionNo] != null) {
             onAnswers.add(answer[questionNo]);
           }
@@ -44,16 +45,19 @@ class QuestionaireState extends PatientState {
         }
       });
     }
-
+    print('The answer is');
+    print(onAnswers);
     double result = await QuestionService().onGetResultFromServer(onAnswers);
-    print("on results    ");
-    print(result);
-    await PatientService.updatePatientAnalysisValue(
-          currentPatient, result.toString());
+
+    await PatientService()
+        .updatePatientAnalysisValue(patient, result.toString());
     _currentResults = result;
     _onResult = true;
-     
     _answerslist.clear();
     notifyListeners();
+
+    _isSubmit = false;
+    _answerslist.clear();
+    onAnswers.clear();
   }
 }

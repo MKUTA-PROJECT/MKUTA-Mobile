@@ -12,11 +12,11 @@ class _ReferalState extends State<Referal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Referal Form'),
-        backgroundColor: Color(0xFFC7E76C),
-      ),
-       body: SingleChildScrollView(
+        appBar: AppBar(
+          title: Text('Referal'),
+          backgroundColor: Color(0xFFC7E76C),
+        ),
+        body: SingleChildScrollView(
             padding: EdgeInsets.all(20.0),
             child: Container(
               child: Column(
@@ -70,8 +70,6 @@ class _ReferalState extends State<Referal> {
                   )
                 ],
               ),
-            )
-            )
-    );
+            )));
   }
 }

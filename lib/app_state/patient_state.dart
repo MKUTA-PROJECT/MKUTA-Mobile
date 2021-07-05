@@ -21,6 +21,7 @@ class PatientState with ChangeNotifier {
     PatientService.onSavePatientToOffline(patient);
     _isLoading = false;
     notifyListeners();
+    print("first name is " + currentPatient.first_name);
   }
 
   Future getPatient() async {

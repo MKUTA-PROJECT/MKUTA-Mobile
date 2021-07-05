@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mkuat/UI/Dahboard/drawer.dart';
+import 'package:mkuat/UI/Dahboard/screening.dart';
+import 'package:mkuat/UI/main/home.dart';
 import 'package:mkuat/UI/model/referal/referal.dart';
-// import 'package:mkuat/UI/model/referal/referal.dart';
-// import 'package:mkuat/UI/model/referal/sputum.dart';
 import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
@@ -25,8 +26,22 @@ class _ResultState extends State<Result> {
 
     return Container(
       child: Scaffold(
+          drawer: MyDrawer(),
           backgroundColor: Colors.white,
           appBar: AppBar(
+            leading: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Screening()),
+                );
+              },
+              child: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+                size: 30.0,
+              ),
+            ),
             title: Text("SCREENING RESULT"),
             backgroundColor: Color(0xFFC7E76C),
           ),
@@ -47,7 +62,7 @@ class _ResultState extends State<Result> {
                       initialAngleInDegree: 0,
                       chartType: ChartType.ring,
                       ringStrokeWidth: 32,
-                      centerText: "Results",
+                      centerText: "${tbValue * 100}%",
                       legendOptions: LegendOptions(
                         showLegendsInRow: false,
                         legendPosition: LegendPosition.right,
@@ -58,9 +73,9 @@ class _ResultState extends State<Result> {
                         ),
                       ),
                       chartValuesOptions: ChartValuesOptions(
-                        showChartValueBackground: true,
-                        showChartValues: true,
-                        showChartValuesInPercentage: true,
+                        showChartValueBackground: false,
+                        showChartValues: false,
+                        showChartValuesInPercentage: false,
                         showChartValuesOutside: true,
                         decimalPlaces: 2,
                       ),
@@ -90,27 +105,34 @@ class _ResultState extends State<Result> {
                                 Divider(),
                                 Container(
                                     child: Column(children: <Widget>[
-                                  InkWell(
-                                      child: Text("Refer Client Here"),
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => Referal()),
-                                        );
-                                      }),
-                                      Divider(),
+                                  Row(
+                                    children: [
                                       InkWell(
-                                      child: Text("Collect sputum Here"),
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => Sputum()),
-                                        );
-                                      }),
+                                          child: Text("Refer Client Here"),
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) => Referal()),
+                                            );
+                                          }),
+                                    ],
+                                  ),
+                                  Divider(),
+                                  Row(
+                                    children: [
+                                      InkWell(
+                                          child: Text("Collect sputum Here"),
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) => Sputum()),
+                                            );
+                                          }),
+                                    ],
+                                  ),
                                 ]))
-                                
                               ],
                             )
                           ],

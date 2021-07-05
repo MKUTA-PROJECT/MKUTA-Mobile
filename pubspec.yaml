@@ -34,6 +34,7 @@ dependencies:
   provider:
   pie_chart: ^5.0.0
   sqflite:
+  uuid: ^3.0.4
 
 dev_dependencies:
   #pie_chart: <latest version>

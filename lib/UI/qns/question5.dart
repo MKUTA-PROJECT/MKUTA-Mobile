@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/UI/model/result.dart';
+import 'package:mkuat/app_state/patient_state.dart';
 import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:provider/provider.dart';
 
@@ -124,7 +125,9 @@ class Question5State extends State<Question5> {
     return Consumer<QuestionaireState>(
         builder: (BuildContext context, questionState, child) {
       return Scaffold(
+         
           appBar: AppBar(
+           
             backgroundColor: Color(0xFFC7E76C),
             title: Text('OTHER SYMPTONS'),
           ),
@@ -238,7 +241,9 @@ class Question5State extends State<Question5> {
               Divider(),
               TextButton(
                 onPressed: () async {
-                  await questionState.onSubmitAnswers();
+                  await questionState.onSubmitAnswers(
+                    Provider.of<PatientState>(context,listen: false).currentPatient
+                  );
                   if (questionState.onResult) {
                     
                     Navigator.push(

@@ -11,17 +11,26 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    drawer: MyDrawer(),
-      
+      drawer: MyDrawer(),
+      // drawerScrimColor: Colors.black,
+
       appBar: AppBar(
-        title: const Text(' Client Registration'),
+        title: const Text(
+          ' Client Registration',
+          style: TextStyle(color: Colors.black),
+        ),
         backgroundColor: Color(0xFFC7E76C),
+        centerTitle: true,
         // centerTitle: true,
         // elevation: 0.0,
       ),
       body: const SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.0,
+            vertical: 20.0,
+          ),
           child: RegisterForm(),
         ),
       ),

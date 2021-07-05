@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/UI/Dahboard/drawer.dart';
+import 'package:mkuat/UI/model/referal/referal.dart';
 import 'package:mkuat/UI/model/referal/sputum.dart';
 
-class Referal extends StatefulWidget {
+class Referals extends StatefulWidget {
   @override
-  _ReferalState createState() => _ReferalState();
+  _ReferalsState createState() => _ReferalsState();
 }
 
-class _ReferalState extends State<Referal> {
+class _ReferalsState extends State<Referals> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

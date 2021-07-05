@@ -15,12 +15,35 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
+  DateTime selectedDate = DateTime.now();
+  DateTime selectedDate1 = DateTime.now();
+  bool isDatePresent = false;
+  int age;
+
+  _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate1, // Refer step 1
+      firstDate: DateTime(1920),
+      lastDate: DateTime(2022),
+    );
+    if (picked != null && picked != selectedDate1) {
+      age = picked.year - selectedDate.year;
+      print('age is');
+      print(age);
+      setState(() {
+        selectedDate = picked;
+      });
+    }
+  }
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   int radioValue = -1;
+  int radioValue1 = -1;
 
   var child;
   var rng = new Random();
-  TextEditingController _age = new TextEditingController();
+  TextEditingController _aController = new TextEditingController();
   TextEditingController _fController = new TextEditingController();
   TextEditingController _mController = new TextEditingController();
   TextEditingController _lController = new TextEditingController();
@@ -28,7 +51,7 @@ class _RegisterFormState extends State<RegisterForm> {
   TextEditingController _dController = new TextEditingController();
   TextEditingController _wController = new TextEditingController();
   TextEditingController _sController = new TextEditingController();
-  TextEditingController _aController = new TextEditingController();
+  //TextEditingController _aController = new TextEditingController();
   TextEditingController _tController = new TextEditingController();
   TextEditingController _gController = new TextEditingController();
 
@@ -47,6 +70,22 @@ class _RegisterFormState extends State<RegisterForm> {
           });
           //  Provider.of<QuestionaireState>(context, listen: false)
           //       .onPutAnswer({1:"1"});
+          break;
+      }
+    });
+  }
+
+  void handleRadioValueChange1(int value) {
+    setState(() {
+      radioValue1 = value;
+      switch (radioValue1) {
+        case 0:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({2: "0"});
+          break;
+        case 1:
+          Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({2: "1"});
           break;
       }
     });
@@ -158,22 +197,8 @@ class _RegisterFormState extends State<RegisterForm> {
                   controller: _tController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Telphone',
+                    labelText: 'Telephone',
                   ),
-                  // validator: (String value) {
-                  // if (value.trim().isEmpty) {
-                  // return 'Full name is required';
-                  // }
-                  // },
-                ),
-                Divider(),
-                TextFormField(
-                  controller: _age,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Age', // dropdown age range goes here
-                  ),
-
                   // validator: (String value) {
                   // if (value.trim().isEmpty) {
                   // return 'Full name is required';
@@ -200,12 +225,56 @@ class _RegisterFormState extends State<RegisterForm> {
                   ],
                 ),
                 Divider(),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () => _selectDate(context), // Refer step 3
+                          child: Text(
+                            'Select date',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          // color: Colors.greenAccent,
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Text(
+                      "${selectedDate.toLocal()}".split(' ')[0],
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+
+                // Text('Age'),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: <Widget>[
+                //     Radio(
+                //       value: 0,
+                //       groupValue: radioValue1,
+                //       onChanged: handleRadioValueChange1,
+                //       // fillColor: Colors.(0xFFC7E76C),
+                //     ),
+                //     Text('Age < 16'),
+                //     Radio(
+                //         value: 1,
+                //         groupValue: radioValue1,
+                //         onChanged: handleRadioValueChange1),
+                //     Text('Age > 16'),
+                //   ],
+                // ),
+                Divider(),
                 Container(
                   // height: 50,
                   // width: 120,
                   decoration: BoxDecoration(
                     color: Color(0xFFC7E76C),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(5),
                   ),
                   child: TextButton(
                       onPressed: () {
@@ -218,10 +287,10 @@ class _RegisterFormState extends State<RegisterForm> {
                               .onPutAnswer({1: "0"});
                         }
 
-                        Provider.of<QuestionaireState>(context, listen: false)
-                            .onPutAnswer({2: "1"});
+                        // Provider.of<QuestionaireState>(context, listen: false)
+                        //     .onPutAnswer({2: "1"});
                         Patient patient = new Patient(
-                          id: rng.nextInt(100).toString(),
+                          id: '',
                           first_name: _fController.text,
                           middle_name: _mController.text,
                           last_name: _lController.text,

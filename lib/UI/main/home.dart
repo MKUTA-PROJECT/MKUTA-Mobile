@@ -3,6 +3,7 @@ import 'package:mkuat/UI/Dahboard/education.dart';
 import 'package:mkuat/UI/Dahboard/screening.dart';
 import 'package:mkuat/UI/model/patientResult.dart';
 import 'package:mkuat/UI/model/referal/sputum_referal.dart';
+
 import 'login.dart';
 
 class Home extends StatefulWidget {
@@ -14,7 +15,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Container(
         padding: EdgeInsets.all(30.0),
         child: GridView.count(
@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
                   splashColor: Colors.green,
                   child: Center(
                       child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Icon(Icons.info, size: 70.0, color: Color(0xFFC7E76C)),
                       Text("TB info & Education")
@@ -50,6 +51,7 @@ class _HomeState extends State<Home> {
                   splashColor: Colors.green,
                   child: Center(
                       child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Icon(Icons.local_hospital,
                           size: 70.0, color: Color(0xFFC7E76C)),
@@ -63,16 +65,21 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Referal()),
+                      MaterialPageRoute(builder: (context) => Referals()),
                     );
                   },
                   splashColor: Colors.green,
                   child: Center(
                       child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Icon(Icons.local_hospital_outlined,
                           size: 70.0, color: Color(0xFFC7E76C)),
-                      Text("Referal/Sputum collection")
+                      Container(
+                          alignment: Alignment.center,
+                          child:
+                              Center(child: Text("Referal/Sputum collection")))
                     ],
                   ))),
             ),
@@ -88,6 +95,7 @@ class _HomeState extends State<Home> {
                   splashColor: Colors.green,
                   child: Center(
                       child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Icon(Icons.question_answer,
                           size: 70.0, color: Color(0xFFC7E76C)),
@@ -107,6 +115,7 @@ class _HomeState extends State<Home> {
                   splashColor: Colors.green,
                   child: Center(
                       child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Icon(Icons.view_list,
                           size: 70.0, color: Color(0xFFC7E76C)),
@@ -126,6 +135,7 @@ class _HomeState extends State<Home> {
                   splashColor: Colors.green,
                   child: Center(
                       child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Icon(Icons.logout, size: 70.0, color: Color(0xFFC7E76C)),
                       Text("Logout")

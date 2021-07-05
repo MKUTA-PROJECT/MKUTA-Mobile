@@ -45,10 +45,10 @@ class _LoginState extends State<Login> {
                             color: Color(0xFFC7E76C),
                           ),
                           border: OutlineInputBorder(),
-                          
                           labelText: 'Email',
                           hintText: 'Valid email',
                         ),
+                        // ignore: missing_return
                         validator: (value) {
                           if (value.isEmpty)
                             return "Your username or password is incorrect";
@@ -67,7 +67,6 @@ class _LoginState extends State<Login> {
                             color: Color(0xFFC7E76C),
                           ),
                           border: OutlineInputBorder(),
-                          
                           labelText: 'Password',
                           hintText: 'Secure password',
                         ),
@@ -97,15 +96,14 @@ class _LoginState extends State<Login> {
                               await loginState.onsetLogin(_emailController.text,
                                   _passwordController.text);
                               if (loginState.isAuth) {
-                                 setState(() {
+                                setState(() {
                                   _emailController.text = "";
                                   _passwordController.text = "";
                                 });
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Home())
-                                        );
+                                        builder: (context) => Home()));
                               } else {
                                 setState(() {
                                   _emailController.text = "";

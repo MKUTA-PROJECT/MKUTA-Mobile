@@ -81,7 +81,7 @@ class _Question2State extends State<Question2> {
               ],
             ),
             Divider(),
-            Text('2. Substance Abuse?'),
+            Text(' Substance Abuse?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
