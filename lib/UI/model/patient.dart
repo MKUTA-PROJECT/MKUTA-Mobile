@@ -15,23 +15,24 @@ class Patient {
   String tb_suspect;
   String tb_status;
   String actitivity;
+  String hospitalName;
 
-  Patient({
-    @required this.id,
-    @required this.first_name,
-    @required this.middle_name,
-    @required this.last_name,
-    @required this.gender,
-    @required this.tel,
-    @required this.age,
-    @required this.region,
-    @required this.district,
-    @required this.ward,
-    @required this.street,
-    @required this.tb_suspect,
-    @required this.tb_status,
-    @required this.actitivity,
-  });
+  Patient(
+      {@required this.id,
+      @required this.first_name,
+      @required this.middle_name,
+      @required this.last_name,
+      @required this.gender,
+      @required this.tel,
+      @required this.age,
+      @required this.region,
+      @required this.district,
+      @required this.ward,
+      @required this.street,
+      @required this.tb_suspect,
+      @required this.tb_status,
+      @required this.actitivity,
+      @required this.hospitalName});
 
   Map toOffline(Patient patient) {
     var map = Map<String, dynamic>();
@@ -49,6 +50,7 @@ class Patient {
     map['tb_suspect'] = patient.tb_suspect;
     map['tb_status'] = patient.tb_status;
     map['activity'] = patient.actitivity;
+    map['hospital'] = patient.hospitalName;
     return map;
   }
 
@@ -67,5 +69,6 @@ class Patient {
     this.tb_suspect = map['tb_suspect'];
     this.tb_status = map['tb_status'];
     this.actitivity = map["activity"];
+    this.hospitalName = map['hospital'];
   }
 }

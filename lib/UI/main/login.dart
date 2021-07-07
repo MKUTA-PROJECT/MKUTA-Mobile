@@ -14,6 +14,12 @@ class _LoginState extends State<Login> {
   String email, password;
   TextEditingController _emailController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    _emailController.text = "admin@gmail.com";
+    _passwordController.text = "admin";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,14 +89,19 @@ class _LoginState extends State<Login> {
                     //   ),
                     // ),
                     Divider(),
+                    SizedBox(
+                      height: 50,
+                    ),
+
                     Container(
                       height: 50,
-                      width: 250,
+                      width: 290,
                       decoration: BoxDecoration(
                         color: Color(0xFFC7E76C),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: TextButton(
+                          // ButtonStyle(alignment: Alignment ),
                           onPressed: () async {
                             if (_formKey.currentState.validate()) {
                               await loginState.onsetLogin(_emailController.text,

@@ -112,7 +112,7 @@ class _SputumFormState extends State<SputumForm> {
                     // color: Color(0xFFC7E76C),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pop(
                           context,
                           MaterialPageRoute(builder: (context) => Sputum()),
                         );

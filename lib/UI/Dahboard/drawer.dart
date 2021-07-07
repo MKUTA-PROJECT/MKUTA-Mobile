@@ -4,6 +4,7 @@ import 'package:mkuat/UI/Dahboard/screening.dart';
 import 'package:mkuat/UI/main/home.dart';
 
 import 'package:mkuat/UI/main/login.dart';
+import 'package:mkuat/UI/model/patientResult.dart';
 
 import 'package:mkuat/UI/model/referal/sputum_referal.dart';
 
@@ -92,10 +93,10 @@ class MyDrawer extends StatelessWidget {
             ),
             title: Text('TB Test Result'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PatientResults()),
+              );
             },
           ),
           ListTile(
@@ -108,7 +109,7 @@ class MyDrawer extends StatelessWidget {
               // Update the state of the app
               // ...
               // Then close the drawer
-              Navigator.pop(context);
+             // Navigator.push(context);
             },
           ),
          

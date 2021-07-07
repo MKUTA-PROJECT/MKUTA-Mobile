@@ -6,7 +6,7 @@ class OfflineDbProvider {
   Database _db;
   // Script for migrations as well as intialization of tables
   final List<String> initialQuery = [
-    "CREATE TABLE IF NOT EXISTS patient (id TEXT PRIMARY KEY, first_name TEXT,middle_name TEXT,last_name TEXT,sex TEXT,tel TEXT,age TEXT,region TEXT,district TEXT,ward TEXT,street TEXT,tb_suspect TEXT,tb_status TEXT,activity TEXT)",
+    "CREATE TABLE IF NOT EXISTS patient (id TEXT PRIMARY KEY, first_name TEXT,middle_name TEXT,last_name TEXT,sex TEXT,tel TEXT,age TEXT,region TEXT,district TEXT,ward TEXT,street TEXT,tb_suspect TEXT,tb_status TEXT,activity TEXT, hospital TEXT)",
   ];
 
   final List<String> migrationQuery = [];

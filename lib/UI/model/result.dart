@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/UI/Dahboard/drawer.dart';
 import 'package:mkuat/UI/Dahboard/screening.dart';
-import 'package:mkuat/UI/main/home.dart';
+
 import 'package:mkuat/UI/model/referal/referal.dart';
+import 'package:mkuat/UI/model/referal/referalForm.dart';
 import 'package:mkuat/app_state/questionaire_state.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
@@ -113,8 +114,9 @@ class _ResultState extends State<Result> {
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                  builder: (context) => Referal()),
+                                                  builder: (context) => ReferalForm()),
                                             );
+                                           // Navigator.pop(context);
                                           }),
                                     ],
                                   ),
@@ -127,7 +129,8 @@ class _ResultState extends State<Result> {
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                  builder: (context) => Sputum()),
+                                                  builder: (context) =>
+                                                      Sputum()),
                                             );
                                           }),
                                     ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/UI/model/referal/referalForm.dart';
 
+import '../patient.dart';
+
 class Referal extends StatefulWidget {
   //const Referal({ Key? key }) : super(key: key);
 
@@ -43,31 +45,40 @@ class _ReferalState extends State<Referal> {
                     ],
                   ),
                   Container(
-                    child: Table(
+                      child: Column(
+                    children: [
+                      Table(
+                          defaultColumnWidth: FixedColumnWidth(80.0),
+                          border: TableBorder.all(
+                            color: Colors.black,
+                            style: BorderStyle.solid,
+                            // width: 2
+                          ),
+                          children: [
+                            TableRow(children: [
+                              Column(children: [Text('Name of client')]),
+                              Column(children: [Text('Date refered')]),
+                              Column(children: [Text('Status')]),
+                            ]),
+                          ]),
+                      Table(
                         defaultColumnWidth: FixedColumnWidth(80.0),
                         border: TableBorder.all(
                           color: Colors.black,
                           style: BorderStyle.solid,
                           // width: 2
                         ),
-                        children: [
-                          TableRow(children: [
-                            Column(children: [Text('Name of client')]),
-                            Column(children: [Text('Date refered')]),
-                            Column(children: [Text('status')]),
-                          ]),
-                          TableRow(children: [
-                            Column(children: [Text('ali')]),
-                            Column(children: [Text('26-06-2020')]),
-                            Column(children: [Text('negative')]),
-                          ]),
-                          TableRow(children: [
-                            Column(children: [Text('asha')]),
-                            Column(children: [Text('03-09-2020')]),
-                            Column(children: [Text('positive')]),
-                          ]),
-                        ]),
-                  )
+                        // children: patientState.patientList.map((Patient patient) {
+                        //   return TableRow(children: [
+                        //     Column(children: [Text(patient.first_name)]),
+                        //     //Column(children: [Text(patient.date)]),
+                        //     Column(children: [Text(patient.tb_status)])
+                        //   ]);
+                        // }
+                        // ).toList()
+                      )
+                    ],
+                  ))
                 ],
               ),
             )));
