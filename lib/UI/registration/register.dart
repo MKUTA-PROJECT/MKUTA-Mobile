@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/UI/Dahboard/drawer.dart';
 import 'package:mkuat/UI/registration/registerForm.dart';
-import 'package:mkuat/app_state/location_state.dart';
-import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -20,7 +18,7 @@ class _RegisterState extends State<Register> {
         appBar: AppBar(
           title: const Text(
             ' Client Registration',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Color(0xFFC7E76C),
           centerTitle: true,

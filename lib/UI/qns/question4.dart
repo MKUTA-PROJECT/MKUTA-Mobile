@@ -171,7 +171,7 @@ class _Question4State extends State<Question4> {
               ],
             ),
             Divider(),
-            Text('hymoptyysis ?'),
+            Text('hemoptysis ?'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

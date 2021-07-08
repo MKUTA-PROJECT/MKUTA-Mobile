@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:mkuat/UI/main/dropDown.dart';
 import 'package:mkuat/UI/model/locationModel/district.dart';
 import 'package:mkuat/UI/model/locationModel/region.dart';
 import 'package:mkuat/UI/model/locationModel/ward.dart';
@@ -73,12 +72,12 @@ class _RegisterFormState extends State<RegisterForm> {
       switch (radioValue) {
         case 0:
           setState(() {
-            _gController.text = "0";
+            _gController.text = "1";
           });
           break;
         case 1:
           setState(() {
-            _gController.text = "1";
+            _gController.text = "0";
           });
           //  Provider.of<QuestionaireState>(context, listen: false)
           //       .onPutAnswer({1:"1"});
@@ -126,10 +125,10 @@ class _RegisterFormState extends State<RegisterForm> {
                 // validator: (String value) {
                 //   if (value.trim().isEmpty) {
                 //     return 'name is required';
-                //   }
+                //   }r
                 // },
               ),
-              const SizedBox(height: 16.0),
+              //const SizedBox(height: 16.0),
               Divider(),
               TextFormField(
                 controller: _mController,
@@ -158,60 +157,44 @@ class _RegisterFormState extends State<RegisterForm> {
                 // },
               ),
               Divider(),
-              // TextFormField(
-              //   controller: _rController,
-              //   decoration: const InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     labelText: 'Region',
-              //   ),
-              //   // validator: (String value) {
-              //   // if (value.trim().isEmpty) {
-              //   // return 'Full name is required';
-              //   // }
-              //   // },
-              // ),
-              // Padding(
-              //   padding: const EdgeInsets.all(10.0),
-              //   child: DropDownStrip(
-              //     dropdownitem: regionname,
-              //     onChange: (newValue) async {
-              //       regionname = newValue;
-
-              //       await locationState.onGetRegions();
-              //       regionDropDownValue =
-              //           await locationState.getSelectedRegion(regionname);
-              //     },
-              //     item: locationState.regionListString,
-              //   ),
-              // ),
-              // Divider(),
-              // Padding(
-              //   padding: const EdgeInsets.all(10.0),
-              //   child: DropDownStrip(
-              //     dropdownitem: districtname,
-              //     onChange: (newValue) async {
-              //       districtname = newValue;
-              //       await locationState.onGetDistrict();
-              //       districtDropDownValue =
-              //           await locationState.getSelectedDistrict(districtname);
-              //     },
-              //     item: locationState.districtListString,
-              //   ),
-              // ),
-              // Divider(),
-              // Padding(
-              //   padding: const EdgeInsets.all(10.0),
-              //   child: DropDownStrip(
-              //     dropdownitem: wardname,
-              //     onChange: (newValue) async {
-              //       wardname = newValue;
-              //       await locationState.onGetWard();
-              //       wardDropDownValue =
-              //           await locationState.getSelectedWard(wardname);
-              //     },
-              //     item: locationState.wardListString,
-              //   ),
-              // ),
+              TextFormField(
+                controller: _rController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Region',
+                ),
+                // validator: (String value) {
+                // if (value.trim().isEmpty) {
+                // return 'Full name is required';
+                // }
+                // },
+               ),Divider(),
+              TextFormField(
+                controller: _dController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'District',
+                ),
+                // validator: (String value) {
+                // if (value.trim().isEmpty) {
+                // return 'Full name is required';
+                // }
+                // },
+               ),
+             Divider(),
+             TextFormField(
+                controller: _wController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Ward',
+                ),
+                // validator: (String value) {
+                // if (value.trim().isEmpty) {
+                // return 'Full name is required';
+                // }
+                // },
+               ),
+             
               Divider(),
               TextFormField(
                 controller: _sController,
@@ -258,30 +241,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 ],
               ),
               Divider(),
-              // Row(
-              //   children: [
-              //     Column(
-              //       children: [
-              //         ElevatedButton(
-              //           onPressed: () => _selectDate(context), // Refer step 3
-              //           child: Text(
-              //             'Select date',
-              //             style: TextStyle(
-              //                 color: Colors.black,
-              //                 fontWeight: FontWeight.bold),
-              //           ),
-              //           // color: Colors.greenAccent,
-              //         ),
-              //       ],
-              //     ),
-              //     Spacer(),
-              //     Text(
-              //       "${selectedDate.toLocal()}".split(' ')[0],
-              //       style:
-              //           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-              //     ),
-              //   ],
-              // ),
+            
               TextFormField(
                 // onSaved: (val) => handleAgeTextField(val),
                 controller: _aController,

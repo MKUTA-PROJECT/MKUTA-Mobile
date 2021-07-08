@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mkuat/UI/model/patient.dart';
-import 'package:mkuat/UI/model/referal/referal.dart';
 import 'package:mkuat/app_state/patient_state.dart';
 import 'package:provider/provider.dart';
+
+import '../patientResult.dart';
 
 class ReferalForm extends StatefulWidget {
   //const ReferalForm({ Key? key }) : super(key: key);
@@ -161,7 +162,7 @@ class _ReferalFormState extends State<ReferalForm> {
                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                  builder: (context) => Referal()),
+                                                  builder: (context) => PatientResults()),
                                             );
                         },
                         child: Center(

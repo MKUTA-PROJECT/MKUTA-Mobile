@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mkuat/UI/Dahboard/drawer.dart';
 import 'package:mkuat/UI/model/patient.dart';
-import 'package:mkuat/UI/model/result.dart';
 import 'package:mkuat/app_state/patient_state.dart';
 import 'package:provider/provider.dart';
 
@@ -65,7 +64,7 @@ class _PatientResultsState extends State<PatientResults> {
                         children:
                             patientState.patientList.map((Patient patient) {
                           return TableRow(children: [
-                            Column(children: [Text(patient.first_name)]),
+                            Column(children: [Text(patient.first_name),Text(patient.last_name)]),
                             Column(children: [Text(patient.tb_status)]),
                             Column(children: [Text(patient.tb_suspect)]),
                             Column(children: [
@@ -92,6 +91,7 @@ class _PatientResultsState extends State<PatientResults> {
                                                 color: Color(0xFFC7E76C),
                                                 fontSize: 17.0),
                                           )
+                                        
                                         : CircularProgressIndicator(),
                                   ),
                                 ),
