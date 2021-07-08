@@ -31,7 +31,7 @@ class _EducationState extends State<Education> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Column(children: [
-                        Text('list of Tb info '),
+                        Text('List of My Activities'),
                       ]),
                       Column(children: [
                         IconButton(

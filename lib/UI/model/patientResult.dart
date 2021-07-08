@@ -76,7 +76,7 @@ class _PatientResultsState extends State<PatientResults> {
                                   onPressed: () {
 
                                     patientState.savePatient(patient);
-                                     patientState.onSetTrackUpload();
+                                    patientState.onSetTrackUpload();
                                     // Navigator.push(
                                     //                   context,
                                     //                   MaterialPageRoute(

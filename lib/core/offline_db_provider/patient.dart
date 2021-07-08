@@ -20,6 +20,7 @@ class ParinetOfflineProvider extends OfflineDbProvider {
   String tb_status = "tb_status";
   String actitivity = "activity";
   String hospital = "hospital";
+  String date = "date";
 
   addOrUpdateParients(Patient patient) async {
     var dbClient = await db;
@@ -54,7 +55,8 @@ class ParinetOfflineProvider extends OfflineDbProvider {
           tb_suspect,
           tb_status,
           actitivity,
-          hospital
+          hospital,
+          date
         ],
       );
       if (maps.isNotEmpty) {

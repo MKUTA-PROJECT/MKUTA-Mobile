@@ -19,7 +19,7 @@ class PatientService {
   }
 
   Future updatePatientAnalysisValue(
-      Patient currentPatient, String analysisValue) {
+    Patient currentPatient, String analysisValue) {
     print("data on update");
     print(analysisValue);
     print("patient is");
@@ -32,6 +32,7 @@ class PatientService {
         gender: currentPatient.gender,
         tel: currentPatient.tel,
         age: currentPatient.age,
+        date: currentPatient.date,
         region: currentPatient.region,
         district: currentPatient.district,
         ward: currentPatient.ward,
@@ -54,14 +55,14 @@ class PatientService {
       "sex": int.parse(patient.gender),
       "tel": patient.tel,
       "age": patient.age,
-      "region": "Dodomacc",
+      "region": patient.region,
       "district": patient.district,
       "ward": patient.ward,
       "street": patient.street,
       "tb_suspect": patient.tb_suspect  == "positive" ? true :false,
       "tb_status":  patient.tb_status  == "1" ? true :false,
       "activity": patient.actitivity,
-      "date":"2021-07-01"
+      "date":patient.date
     };
 
     Response response =

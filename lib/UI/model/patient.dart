@@ -16,6 +16,7 @@ class Patient {
   String tb_status;
   String actitivity;
   String hospitalName;
+  String date;
 
   Patient(
       {@required this.id,
@@ -29,6 +30,7 @@ class Patient {
       @required this.district,
       @required this.ward,
       @required this.street,
+      @required this.date,
       @required this.tb_suspect,
       @required this.tb_status,
       @required this.actitivity,
@@ -51,6 +53,7 @@ class Patient {
     map['tb_status'] = patient.tb_status;
     map['activity'] = patient.actitivity;
     map['hospital'] = patient.hospitalName;
+    map['date'] = patient.date;
     return map;
   }
 
@@ -70,5 +73,7 @@ class Patient {
     this.tb_status = map['tb_status'];
     this.actitivity = map["activity"];
     this.hospitalName = map['hospital'];
+    this.date = map['date'];
+
   }
 }

@@ -151,10 +151,6 @@ class _ResultState extends State<Result> {
                                           ),
                                           child: TextButton(
                                             onPressed: () {
-                                              //Navigator.of(context)
-                                              // .pushNamedAndRemoveUntil(
-                                              //     'C:/Users/Karzai/Desktop/MKUTA/FYP/Mobile1/MKUTA-Mobile/lib/UI/Dahboard',
-                                              //     ModalRoute.withName(''));
                                               Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>

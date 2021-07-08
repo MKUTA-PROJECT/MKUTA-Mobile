@@ -20,6 +20,7 @@ class _ReferalFormState extends State<ReferalForm> {
   TextEditingController _nameController = new TextEditingController();
   TextEditingController _hospitalController = new TextEditingController();
   TextEditingController _genderController = new TextEditingController();
+  TextEditingController _dateController = new TextEditingController();
   int tb_status = 0;
   @override
   void initState() {
@@ -35,6 +36,8 @@ class _ReferalFormState extends State<ReferalForm> {
         Provider.of<PatientState>(context, listen: false).currentPatient.age;
     _genderController.text =
         Provider.of<PatientState>(context, listen: false).currentPatient.gender;
+    _dateController.text =
+        Provider.of<PatientState>(context, listen: false).currentPatient.date;
   }
 
   void handleRadioValueChange(int value) {
@@ -106,7 +109,7 @@ class _ReferalFormState extends State<ReferalForm> {
                     ),
                     Divider(),
                     TextFormField(
-                      controller: _genderController,
+                      controller: _dateController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: ' Date ',
@@ -148,6 +151,7 @@ class _ReferalFormState extends State<ReferalForm> {
                               last_name: currentPatient.last_name,
                               gender: currentPatient.gender,
                               tel: currentPatient.tel,
+                              date: currentPatient.date,
                               age: currentPatient.age,
                               region: currentPatient.region,
                               district: currentPatient.district,
@@ -155,7 +159,7 @@ class _ReferalFormState extends State<ReferalForm> {
                               street: currentPatient.street,
                               tb_status: tb_status == 1 ? "positive" :"negative",
                               tb_suspect: "1",
-                              actitivity: "" ,
+                              actitivity: "1" ,
                               hospitalName: _hospitalController.text
                               );
                                patientState.savePatient(patient);

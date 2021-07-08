@@ -18,40 +18,20 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
+  var selectedDate = new DateTime.now().toString().substring(0, 10);
   var districtname = 'District';
   var wardname = 'Ward';
   var regionname = 'Region';
   Region regionDropDownValue;
   District districtDropDownValue;
   Ward wardDropDownValue;
-  DateTime selectedDate = DateTime.now();
-  DateTime selectedDate1 = DateTime.now();
   bool isDatePresent = false;
   int age;
 
   int value;
 
-  _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
-      context: context,
-      initialDate: selectedDate1, // Refer step 1
-      firstDate: DateTime(1920),
-      lastDate: DateTime(2022),
-    );
-    if (picked != null && picked != selectedDate1) {
-      age = picked.year - selectedDate.year;
-      print('age is');
-      print(age);
-      setState(() {
-        selectedDate = picked;
-      });
-    }
-  }
-
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   int radioValue = -1;
-  int ageValue = 45;
-
   var child;
   var rng = new Random();
   TextEditingController _aController = new TextEditingController();
@@ -69,29 +49,24 @@ class _RegisterFormState extends State<RegisterForm> {
   void handleRadioValueChange(int value) {
     setState(() {
       radioValue = value;
+      radioValue = value;
       switch (radioValue) {
         case 0:
-          setState(() {
-            _gController.text = "1";
-          });
+         Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                1:"0"
+              });
           break;
         case 1:
-          setState(() {
-            _gController.text = "0";
-          });
-          //  Provider.of<QuestionaireState>(context, listen: false)
-          //       .onPutAnswer({1:"1"});
+        Provider.of<QuestionaireState>(context, listen: false)
+              .onPutAnswer({
+                1:"1"
+              });
           break;
       }
     });
   }
 
-  void handleAgeTextField(String value) {
-    setState(() {
-      ageValue = int.parse(value);
-      print(ageValue);
-    });
-  }
 
   @override
   void initState() {
@@ -168,7 +143,8 @@ class _RegisterFormState extends State<RegisterForm> {
                 // return 'Full name is required';
                 // }
                 // },
-               ),Divider(),
+              ),
+              Divider(),
               TextFormField(
                 controller: _dController,
                 decoration: const InputDecoration(
@@ -180,9 +156,9 @@ class _RegisterFormState extends State<RegisterForm> {
                 // return 'Full name is required';
                 // }
                 // },
-               ),
-             Divider(),
-             TextFormField(
+              ),
+              Divider(),
+              TextFormField(
                 controller: _wController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -193,8 +169,8 @@ class _RegisterFormState extends State<RegisterForm> {
                 // return 'Full name is required';
                 // }
                 // },
-               ),
-             
+              ),
+
               Divider(),
               TextFormField(
                 controller: _sController,
@@ -241,7 +217,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 ],
               ),
               Divider(),
-            
+
               TextFormField(
                 // onSaved: (val) => handleAgeTextField(val),
                 controller: _aController,
@@ -266,16 +242,8 @@ class _RegisterFormState extends State<RegisterForm> {
                 ),
                 child: TextButton(
                     onPressed: () {
-                      if (_gController.text != null &&
-                          _gController.text == "M") {
-                        Provider.of<QuestionaireState>(context, listen: false)
-                            .onPutAnswer({1: "1"});
-                      } else {
-                        Provider.of<QuestionaireState>(context, listen: false)
-                            .onPutAnswer({1: "0"});
-                      }
-
-                      if (int.parse(_aController.text) >= 16) {
+                  
+                      if (int.parse(_aController.text) <= 15) {
                         Provider.of<QuestionaireState>(context, listen: false)
                             .onPutAnswer({2: "0"});
                         print("Age is less than 16");
@@ -286,22 +254,22 @@ class _RegisterFormState extends State<RegisterForm> {
                       }
 
                       Patient patient = new Patient(
-                        id: '',
-                        first_name: _fController.text,
-                        middle_name: _mController.text,
-                        last_name: _lController.text,
-                        region: _rController.text,
-                        district: "Dodoma",
-                        ward: "Dodoma Mjini",
-                        age: _aController.text,
-                        gender: _gController.text,
-                        street: "Data ",
-                        tel: _tController.text,
-                        actitivity: '',
-                        tb_status: '',
-                        tb_suspect: '',
-                        hospitalName: ''
-                      );
+                          id: '',
+                          first_name: _fController.text,
+                          middle_name: _mController.text,
+                          last_name: _lController.text,
+                          region: _rController.text,
+                          district:_dController.text,
+                          ward: _wController.text,
+                          age: _aController.text,
+                          gender: _gController.text,
+                          street:_sController.text,
+                          date: selectedDate,
+                          tel: _tController.text,
+                          actitivity: '1',
+                          tb_status: '',
+                          tb_suspect: '',
+                          hospitalName: '');
                       patientState.savePatient(patient);
                       Navigator.push(
                         context,
