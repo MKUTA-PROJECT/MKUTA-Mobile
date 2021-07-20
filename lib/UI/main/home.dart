@@ -59,30 +59,30 @@ class _HomeState extends State<Home> {
                     ],
                   ))),
             ),
-            Card(
-              margin: EdgeInsets.all(8.0),
-              child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Referals()),
-                    );
-                  },
-                  splashColor: Colors.green,
-                  child: Center(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.local_hospital_outlined,
-                          size: 70.0, color: Color(0xFFC7E76C)),
-                      Container(
-                          alignment: Alignment.center,
-                          child:
-                              Center(child: Text("Referal/Sputum collection")))
-                    ],
-                  ))),
-            ),
+            // Card(
+            //   margin: EdgeInsets.all(8.0),
+            //   child: InkWell(
+            //       onTap: () {
+            //         Navigator.push(
+            //           context,
+            //           MaterialPageRoute(builder: (context) => Referals()),
+            //         );
+            //       },
+            //       splashColor: Colors.green,
+            //       child: Center(
+            //           child: Column(
+            //         mainAxisAlignment: MainAxisAlignment.center,
+            //         crossAxisAlignment: CrossAxisAlignment.center,
+            //         children: <Widget>[
+            //           Icon(Icons.local_hospital_outlined,
+            //               size: 70.0, color: Color(0xFFC7E76C)),
+            //           Container(
+            //               alignment: Alignment.center,
+            //               child:
+            //                   Center(child: Text("Referal/Sputum collection")))
+            //         ],
+            //       ))),
+            // ),
             Card(
               margin: EdgeInsets.all(8.0),
               child: InkWell(
@@ -103,26 +103,26 @@ class _HomeState extends State<Home> {
                     ],
                   ))),
             ),
-            Card(
-              margin: EdgeInsets.all(8.0),
-              child: InkWell(
-                  // onTap: () {
-                  //   Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(builder: (context) => PatientResults()),
-                  //   );
-                  // },
-                  splashColor: Colors.green,
-                  child: Center(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.view_list,
-                          size: 70.0, color: Color(0xFFC7E76C)),
-                      Text("Contact Tracing")
-                    ],
-                  ))),
-            ),
+            // Card(
+            //   margin: EdgeInsets.all(8.0),
+            //   child: InkWell(
+            //       // onTap: () {
+            //       //   Navigator.push(
+            //       //     context,
+            //       //     MaterialPageRoute(builder: (context) => PatientResults()),
+            //       //   );
+            //       // },
+            //       splashColor: Colors.green,
+            //       child: Center(
+            //           child: Column(
+            //         mainAxisAlignment: MainAxisAlignment.center,
+            //         children: <Widget>[
+            //           Icon(Icons.view_list,
+            //               size: 70.0, color: Color(0xFFC7E76C)),
+            //           Text("Contact Tracing")
+            //         ],
+            //       ))),
+            // ),
             Card(
               margin: EdgeInsets.all(8.0),
               child: InkWell(

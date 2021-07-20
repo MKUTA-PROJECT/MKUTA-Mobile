@@ -50,7 +50,7 @@ class _PatientResultsState extends State<PatientResults> {
                           TableRow(children: [
                             Column(children: [Text('Client Name')]),
                             Column(children: [Text('Status')]),
-                            Column(children: [Text('Suspicion')]),
+                            // Column(children: [Text('Suspicion')]),
                             Column(children: [Text('Upload')]),
                           ]),
                         ]),
@@ -66,7 +66,7 @@ class _PatientResultsState extends State<PatientResults> {
                           return TableRow(children: [
                             Column(children: [Text(patient.first_name),Text(patient.last_name)]),
                             Column(children: [Text(patient.tb_status)]),
-                            Column(children: [Text(patient.tb_suspect)]),
+                            // Column(children: [Text(patient.tb_suspect)]),
                             Column(children: [
                               Container(
                                 decoration: BoxDecoration(

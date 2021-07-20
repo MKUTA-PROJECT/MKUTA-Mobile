@@ -39,30 +39,30 @@ class PatientService {
         street: currentPatient.street,
         hospitalName: "",
         tb_status: "",
-        tb_suspect: "0",
+        tb_suspect: "1",
         actitivity: "");
-    PatientState().savePatient(patient);
+    // PatientState().savePatient(patient);
     return null;
   }
 
   Future<bool> onPostsClientData(Patient patient) async {
     String secondaryUrl = "clients/";
-     final now = new DateTime.now();;
+    final now = new DateTime.now();
     Map<String, dynamic> data = {
       "first_name": patient.first_name,
       "middle_name": patient.middle_name,
       "last_name": patient.last_name,
-      "sex": int.parse(patient.gender),
+      "sex": 1,
       "tel": patient.tel,
       "age": patient.age,
       "region": patient.region,
       "district": patient.district,
       "ward": patient.ward,
       "street": patient.street,
-      "tb_suspect": patient.tb_suspect  == "positive" ? true :false,
-      "tb_status":  patient.tb_status  == "1" ? true :false,
-      "activity": patient.actitivity,
-      "date":patient.date
+      "tb_suspect": patient.tb_suspect == "positive" ? true : false,
+      "tb_status": patient.tb_status == "1" ? true : false,
+      "activity": '',
+      "date": patient.date
     };
 
     Response response =

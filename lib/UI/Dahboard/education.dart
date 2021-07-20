@@ -63,12 +63,12 @@ class _EducationState extends State<Education> {
                             Column(children: [Text('No of Clients')]),
                           ]),
                           TableRow(children: [
-                            Column(children: [Text('Ilala')]),
+                            Column(children: [Text('Temeke')]),
                             Column(children: [Text('26-06-2020')]),
                             Column(children: [Text('20')]),
                           ]),
                           TableRow(children: [
-                            Column(children: [Text('Ilala')]),
+                            Column(children: [Text('Ubungo')]),
                             Column(children: [Text('03-09-2020')]),
                             Column(children: [Text('60')]),
                           ]),

@@ -41,22 +41,6 @@ class _EducationInfoState extends State<EducationInfo> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     TextFormField(
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        prefixText: 'Number of client ',
-                        labelText: 'Number of client ',
-                      ),
-                    ),
-                    Divider(),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        prefixText: 'Number of Male ',
-                        labelText: 'Number of Male ',
-                      ),
-                    ),
-                    Divider(),
-                    TextFormField(
                       controller: _maController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
@@ -71,14 +55,6 @@ class _EducationInfoState extends State<EducationInfo> {
                         border: OutlineInputBorder(),
                         prefixText: 'No of Male Age < 16 ',
                         labelText: 'No of Male Age < 16  ',
-                      ),
-                    ),
-                    Divider(),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        prefixText: 'Number of Female ',
-                        labelText: 'Number of Female ',
                       ),
                     ),
                     Divider(),
@@ -100,6 +76,30 @@ class _EducationInfoState extends State<EducationInfo> {
                       ),
                     ),
                     Divider(),
+                    // TextFormField(
+                    //   decoration: const InputDecoration(
+                    //     border: OutlineInputBorder(),
+                    //     prefixText: 'Number of Female ',
+                    //     labelText: 'Number of Female ',
+                    //   ),
+                    // ),
+                    // Divider(),
+                    // TextFormField(
+                    //   decoration: const InputDecoration(
+                    //     border: OutlineInputBorder(),
+                    //     prefixText: 'Number of Male ',
+                    //     labelText: 'Number of Male ',
+                    //   ),
+                    // ),
+                    // Divider(),
+                    // TextFormField(
+                    //   decoration: const InputDecoration(
+                    //     border: OutlineInputBorder(),
+                    //     prefixText: 'Number of client ',
+                    //     labelText: 'Number of client ',
+                    //   ),
+                    // ),
+                    // Divider(),
                     Row(
                       children: [
                         Text(
@@ -217,7 +217,6 @@ class _EducationInfoState extends State<EducationInfo> {
                                       ],
                                     ));
                           }
-                          
                         },
                         child: isSubmit
                             ? CircularProgressIndicator()

@@ -75,17 +75,17 @@ class MyDrawer extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading:
-                Icon(Icons.local_hospital_outlined, color: Color(0xFFC7E76C)),
-            title: Text('Referal/Sputum Collection'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Referals()),
-              );
-            },
-          ),
+          // ListTile(
+          //   leading:
+          //       Icon(Icons.local_hospital_outlined, color: Color(0xFFC7E76C)),
+          //   title: Text('Referal/Sputum Collection'),
+          //   onTap: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => Referals()),
+          //     );
+          //   },
+          // ),
           ListTile(
             leading: Icon(
               Icons.local_hospital,
@@ -99,19 +99,19 @@ class MyDrawer extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.local_hospital,
-              color: Color(0xFFC7E76C),
-            ),
-            title: Text('Contact Tracing'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-             // Navigator.push(context);
-            },
-          ),
+          // ListTile(
+          //   leading: Icon(
+          //     Icons.local_hospital,
+          //     color: Color(0xFFC7E76C),
+          //   ),
+          //   title: Text('Contact Tracing'),
+          //   onTap: () {
+          //     // Update the state of the app
+          //     // ...
+          //     // Then close the drawer
+          //    // Navigator.push(context);
+          //   },
+          // ),
          
           ListTile(
             leading: Icon(

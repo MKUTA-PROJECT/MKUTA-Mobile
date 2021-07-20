@@ -13,7 +13,7 @@ class PatientState with ChangeNotifier {
   bool get isLoading => _isLoading ?? false;
   List<Patient> get patientList => _patientList ?? [];
   Patient get currentPatient => _currentPatient;
-  bool get trackUpload => _trackUpload ?? false;
+  bool get trackUpload => _trackUpload ?? true;
 
   //reducer
   savePatient(Patient patient) {
@@ -34,11 +34,11 @@ class PatientState with ChangeNotifier {
   }
 
   onSetTrackUpload()async {
-    _trackUpload = true;
+    _trackUpload = false;
     notifyListeners();
     print(currentPatient.first_name);
    if(await PatientService().onPostsClientData(currentPatient)){
-      _trackUpload = false;
+      _trackUpload = true;
     notifyListeners();
    }
   }

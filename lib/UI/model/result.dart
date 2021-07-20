@@ -28,19 +28,19 @@ class _ResultState extends State<Result> {
           drawer: MyDrawer(),
           backgroundColor: Colors.white,
           appBar: AppBar(
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Screening()),
-                );
-              },
-              child: Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-                size: 30.0,
-              ),
-            ),
+            // leading: GestureDetector(
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => Screening()),
+            //     );
+            //   },
+            //   child: Icon(
+            //     Icons.arrow_back,
+            //     color: Colors.white,
+            //     size: 30.0,
+            //   ),
+            // ),
             title: Text("SCREENING RESULT"),
             backgroundColor: Color(0xFFC7E76C),
           ),
@@ -108,37 +108,41 @@ class _ResultState extends State<Result> {
                                 Divider(),
                                 Column(children: <Widget>[
                                   Container(
-                                    child: InkWell(
-                                        child: Text(
-                                          "Refer Client Here",
-                                          style: TextStyle(fontSize: 15.0),
-                                        ),
-                                        onTap: () {
-                                         // Navigator.popUntil(context, (route) => false)
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ReferalForm()),
-                                          );
-                                        }),
+                                    child: Center(
+                                      child: InkWell(
+                                          child: Text(
+                                            "Refer Client Here",
+                                            style: TextStyle(fontSize: 15.0),
+                                          ),
+                                          onTap: () {
+                                           // Navigator.popUntil(context, (route) => false)
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ReferalForm()),
+                                            );
+                                          }),
+                                    ),
                                   ),
                                   Divider(),
                                   Container(
-                                    child: InkWell(
-                                        child: Text("Collect sputum Here",
-                                            style: TextStyle(fontSize: 15.0)),
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    SputumForm()),
-                                          );
-                                        }),
+                                    child: Center(
+                                      child: InkWell(
+                                          child: Text("Collect sputum Here",
+                                              style: TextStyle(fontSize: 15.0)),
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      SputumForm()),
+                                            );
+                                          }),
+                                    ),
                                   ),
                                   SizedBox(
-                                    height: 100.0,
+                                    height: 80.0,
                                   ),
                                   Container(
                                     child: Row(
@@ -149,20 +153,22 @@ class _ResultState extends State<Result> {
                                             borderRadius:
                                                 BorderRadius.circular(20),
                                           ),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Screening()),
-                                              );
-                                            },
-                                            child: Center(
-                                              child: Text(
-                                                'New Screening',
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 15.0),
+                                          child: Center(
+                                            child: TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Screening()),
+                                                );
+                                              },
+                                              child: Center(
+                                                child: Text(
+                                                  'New Screening',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 15.0),
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -176,23 +182,23 @@ class _ResultState extends State<Result> {
                                             borderRadius:
                                                 BorderRadius.circular(20),
                                           ),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Register()),
-                                              );
-                                            },
-                                            child: Center(
-                                              child: Text(
-                                                'Refresh',
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 15.0),
-                                              ),
-                                            ),
-                                          ),
+                                          // child: TextButton(
+                                          //   onPressed: () {
+                                          //     Navigator.of(context).push(
+                                          //       MaterialPageRoute(
+                                          //           builder: (context) =>
+                                          //               Register()),
+                                          //     );
+                                          //   },
+                                          //   child: Center(
+                                          //     child: Text(
+                                          //       'Refresh',
+                                          //       style: TextStyle(
+                                          //           color: Colors.black,
+                                          //           fontSize: 15.0),
+                                          //     ),
+                                          //   ),
+                                          // ),
                                         ),
                                       ],
                                     ),

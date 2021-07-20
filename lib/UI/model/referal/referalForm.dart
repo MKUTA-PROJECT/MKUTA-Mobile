@@ -91,14 +91,14 @@ class _ReferalFormState extends State<ReferalForm> {
                       ),
                     ),
                     Divider(),
-                    TextFormField(
-                      controller: _genderController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: ' Gender: ',
-                      ),
-                    ),
-                    Divider(),
+                    // TextFormField(
+                    //   controller: _genderController,
+                    //   decoration: const InputDecoration(
+                    //     border: OutlineInputBorder(),
+                    //     labelText: ' Gender: ',
+                    //   ),
+                    // ),
+                    // Divider(),
                     Text(' Hospital Info:'),
                     TextFormField(
                       controller: _hospitalController,
